@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<!-- saved from url=(0287)https://discuss.geeksforgeeks.org/discuss/prob703691/String%20Subsequence%20Game%20%7C%20Practice%20%7C%20GeeksforGeeks%20/practice/?rel=https%3A%2F%2Fpractice.geeksforgeeks.org%2Fproblems%2Fstring-subsequence-game5515%2F1%3Fpage%3D5%26curated%5B%5D%3D7%26sortBy%3Dsubmissions&mode=light -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!--<base target="_blank">--><base href="." target="_blank"><style type="text/css">svg:not(:root).svg-inline--fa {
+  overflow: visible;
+}
+
+.svg-inline--fa {
+  display: inline-block;
+  font-size: inherit;
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+}
+.svg-inline--fa.fa-lg {
+  vertical-align: -0.225em;
+}
+.svg-inline--fa.fa-w-1 {
+  width: 0.0625em;
+}
+.svg-inline--fa.fa-w-2 {
+  width: 0.125em;
+}
+.svg-inline--fa.fa-w-3 {
+  width: 0.1875em;
+}
+.svg-inline--fa.fa-w-4 {
+  width: 0.25em;
+}
+.svg-inline--fa.fa-w-5 {
+  width: 0.3125em;
+}
+.svg-inline--fa.fa-w-6 {
+  width: 0.375em;
+}
+.svg-inline--fa.fa-w-7 {
+  width: 0.4375em;
+}
+.svg-inline--fa.fa-w-8 {
+  width: 0.5em;
+}
+.svg-inline--fa.fa-w-9 {
+  width: 0.5625em;
+}
+.svg-inline--fa.fa-w-10 {
+  width: 0.625em;
+}
+.svg-inline--fa.fa-w-11 {
+  width: 0.6875em;
+}
+.svg-inline--fa.fa-w-12 {
+  width: 0.75em;
+}
+.svg-inline--fa.fa-w-13 {
+  width: 0.8125em;
+}
+.svg-inline--fa.fa-w-14 {
+  width: 0.875em;
+}
+.svg-inline--fa.fa-w-15 {
+  width: 0.9375em;
+}
+.svg-inline--fa.fa-w-16 {
+  width: 1em;
+}
+.svg-inline--fa.fa-w-17 {
+  width: 1.0625em;
+}
+.svg-inline--fa.fa-w-18 {
+  width: 1.125em;
+}
+.svg-inline--fa.fa-w-19 {
+  width: 1.1875em;
+}
+.svg-inline--fa.fa-w-20 {
+  width: 1.25em;
+}
+.svg-inline--fa.fa-pull-left {
+  margin-right: 0.3em;
+  width: auto;
+}
+.svg-inline--fa.fa-pull-right {
+  margin-left: 0.3em;
+  width: auto;
+}
+.svg-inline--fa.fa-border {
+  height: 1.5em;
+}
+.svg-inline--fa.fa-li {
+  width: 2em;
+}
+.svg-inline--fa.fa-fw {
+  width: 1.25em;
+}
+
+.fa-layers svg.svg-inline--fa {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.fa-layers {
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  text-align: center;
+  vertical-align: -0.125em;
+  width: 1em;
+}
+.fa-layers svg.svg-inline--fa {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-counter, .fa-layers-text {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+}
+
+.fa-layers-text {
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-counter {
+  background-color: #ff253a;
+  border-radius: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #fff;
+  height: 1.5em;
+  line-height: 1;
+  max-width: 5em;
+  min-width: 1.5em;
+  overflow: hidden;
+  padding: 0.25em;
+  right: 0;
+  text-overflow: ellipsis;
+  top: 0;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-bottom-right {
+  bottom: 0;
+  right: 0;
+  top: auto;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+}
+
+.fa-layers-bottom-left {
+  bottom: 0;
+  left: 0;
+  right: auto;
+  top: auto;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+
+.fa-layers-top-right {
+  right: 0;
+  top: 0;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-top-left {
+  left: 0;
+  right: auto;
+  top: 0;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+}
+
+.fa-lg {
+  font-size: 1.3333333333em;
+  line-height: 0.75em;
+  vertical-align: -0.0667em;
+}
+
+.fa-xs {
+  font-size: 0.75em;
+}
+
+.fa-sm {
+  font-size: 0.875em;
+}
+
+.fa-1x {
+  font-size: 1em;
+}
+
+.fa-2x {
+  font-size: 2em;
+}
+
+.fa-3x {
+  font-size: 3em;
+}
+
+.fa-4x {
+  font-size: 4em;
+}
+
+.fa-5x {
+  font-size: 5em;
+}
+
+.fa-6x {
+  font-size: 6em;
+}
+
+.fa-7x {
+  font-size: 7em;
+}
+
+.fa-8x {
+  font-size: 8em;
+}
+
+.fa-9x {
+  font-size: 9em;
+}
+
+.fa-10x {
+  font-size: 10em;
+}
+
+.fa-fw {
+  text-align: center;
+  width: 1.25em;
+}
+
+.fa-ul {
+  list-style-type: none;
+  margin-left: 2.5em;
+  padding-left: 0;
+}
+.fa-ul > li {
+  position: relative;
+}
+
+.fa-li {
+  left: -2em;
+  position: absolute;
+  text-align: center;
+  width: 2em;
+  line-height: inherit;
+}
+
+.fa-border {
+  border: solid 0.08em #eee;
+  border-radius: 0.1em;
+  padding: 0.2em 0.25em 0.15em;
+}
+
+.fa-pull-left {
+  float: left;
+}
+
+.fa-pull-right {
+  float: right;
+}
+
+.fa.fa-pull-left,
+.fas.fa-pull-left,
+.far.fa-pull-left,
+.fal.fa-pull-left,
+.fab.fa-pull-left {
+  margin-right: 0.3em;
+}
+.fa.fa-pull-right,
+.fas.fa-pull-right,
+.far.fa-pull-right,
+.fal.fa-pull-right,
+.fab.fa-pull-right {
+  margin-left: 0.3em;
+}
+
+.fa-spin {
+  -webkit-animation: fa-spin 2s infinite linear;
+          animation: fa-spin 2s infinite linear;
+}
+
+.fa-pulse {
+  -webkit-animation: fa-spin 1s infinite steps(8);
+          animation: fa-spin 1s infinite steps(8);
+}
+
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.fa-rotate-90 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.fa-rotate-180 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.fa-rotate-270 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+
+.fa-flip-horizontal {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.fa-flip-vertical {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+}
+
+.fa-flip-both, .fa-flip-horizontal.fa-flip-vertical {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  -webkit-transform: scale(-1, -1);
+          transform: scale(-1, -1);
+}
+
+:root .fa-rotate-90,
+:root .fa-rotate-180,
+:root .fa-rotate-270,
+:root .fa-flip-horizontal,
+:root .fa-flip-vertical,
+:root .fa-flip-both {
+  -webkit-filter: none;
+          filter: none;
+}
+
+.fa-stack {
+  display: inline-block;
+  height: 2em;
+  position: relative;
+  width: 2.5em;
+}
+
+.fa-stack-1x,
+.fa-stack-2x {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.svg-inline--fa.fa-stack-1x {
+  height: 1em;
+  width: 1.25em;
+}
+.svg-inline--fa.fa-stack-2x {
+  height: 2em;
+  width: 2.5em;
+}
+
+.fa-inverse {
+  color: #fff;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.sr-only-focusable:active, .sr-only-focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+.svg-inline--fa .fa-primary {
+  fill: var(--fa-primary-color, currentColor);
+  opacity: 1;
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa .fa-secondary {
+  fill: var(--fa-secondary-color, currentColor);
+  opacity: 0.4;
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-primary {
+  opacity: 0.4;
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-secondary {
+  opacity: 1;
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa mask .fa-primary,
+.svg-inline--fa mask .fa-secondary {
+  fill: black;
+}
+
+.fad.fa-inverse {
+  color: #fff;
+}</style><link rel="icon" href="https://media.geeksforgeeks.org/img-practice/favicon-1600291663.png"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#000000"><meta name="description" content="A Computer Science portal for geeks. It contains well written, well thought and well explained computer science and programming articles, quizzes and practice/competitive programming/company interview Questions."><meta property="og:image" content="https://media.geeksforgeeks.org/img-practice/gfg_200X200.png"><meta property="og:image:alt" content="https://www.geeksforgeeks.org/wp-content/uploads/gfg_200X200.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="200"><meta property="og:image:height" content="200"><link rel="apple-touch-icon" href="https://media.geeksforgeeks.org/img-practice/gfg_200X200.png"><link rel="manifest" href="https://discuss.geeksforgeeks.org/manifest.json"><title>Discuss | GeeksforGeeks | A computer science portal for geeks</title><link href="./5.27dd871e.chunk.css" rel="stylesheet"><link href="./main.8e00513e.chunk.css" rel="stylesheet"><link rel="stylesheet" type="text/css" href="./0.f4c56af9.chunk.css"><script charset="utf-8" src="./0.911b0286.chunk.js.download"></script><link rel="stylesheet" type="text/css" href="./1.bf61578f.chunk.css"><script charset="utf-8" src="./1.52154e6e.chunk.js.download"></script><script charset="utf-8" src="./2.b54af5a7.chunk.js.download"></script><script charset="utf-8" src="./9.1e9abe1f.chunk.js.download"></script><script referrerpolicy="origin" type="application/javascript" id="tiny-script_41432313511678936156817" src="./tinymce.min.js.download"></script><link rel="stylesheet" type="text/css" id="mce-u0" referrerpolicy="origin" href="./skin.min.css"></head><body data-new-gr-c-s-check-loaded="14.1100.0" data-gr-ext-installed=""><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"><div class="App"><section><section id="comment-sys"><section class="ml-15 mr-15"><div class="px-0 mb-3"><div class="d-flex mx-0"><div class="col-12 px-0"><h5 class="float-left font-weight-bold headingStyle sofia-pro">Discussions<span class="text-secondary ml-2 h6"> ( 59 Threads )</span><a target="_blank" href="https://discuss.geeksforgeeks.org/dashboard?utm-source=practice&amp;utm-campaign=prob703691&amp;utm-event=comment-thread"><img class="ml-2 pb-1 external-link-icon" alt="Click to open dashboard" src="./external_link-1629374313.svg"></a></h5><div class="float-right"><div class="dropdown"><button class="sofia-pro btn btn-sm dropdown-toggle font-weight-bold sofia-pro" type="button" id="filter-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Most Recent</button><div class="dropdown-menu dropdown-menu-right" aria-labelledby="filter-options"><button class="dropdown-item font-weight-bold sofia-pro">Most Recent</button><button class="dropdown-item font-weight-bold sofia-pro">Least Recent</button><button class="dropdown-item font-weight-bold sofia-pro">Most Rated</button></div></div></div><div class="float-right"></div></div></div></div></section><div><section><div class="mt-3 ml-15 mr-15"><div style="display: block;"><textarea id="tiny-react_45791117021678936157959" style="display: none;" aria-hidden="true"></textarea><div role="application" class="tox tox-tinymce" aria-disabled="false" style="visibility: hidden; height: 100px;" data-mce-style="visibility: hidden; height: 100px;"><div class="tox-editor-container"><div data-alloy-vertical-dir="toptobottom" class="tox-editor-header"><div role="group" class="tox-toolbar-overlord" aria-disabled="false"><div role="group" class="tox-toolbar__primary"><div title="" role="toolbar" data-alloy-tabstop="true" tabindex="-1" class="tox-toolbar__group"><button aria-label="Heading format" title="Heading format" aria-haspopup="true" type="button" tabindex="-1" class="tox-tbtn" aria-disabled="false" aria-expanded="false"><span class="tox-icon tox-tbtn__icon-wrap"><svg width="24" height="24" focusable="false"><path fill-rule="evenodd" d="M17 5a1 1 0 010 2h-4v11a1 1 0 01-2 0V7H7a1 1 0 110-2h10z"></path></svg></span></button></div><div title="" role="toolbar" data-alloy-tabstop="true" tabindex="-1" class="tox-toolbar__group"><button aria-label="Bold" title="Bold" type="button" tabindex="-1" class="tox-tbtn" aria-disabled="false" aria-pressed="false"><span class="tox-icon tox-tbtn__icon-wrap"><svg width="24" height="24" focusable="false"><path d="M7.8 19c-.3 0-.5 0-.6-.2l-.2-.5V5.7c0-.2 0-.4.2-.5l.6-.2h5c1.5 0 2.7.3 3.5 1 .7.6 1.1 1.4 1.1 2.5a3 3 0 01-.6 1.9c-.4.6-1 1-1.6 1.2.4.1.9.3 1.3.6s.8.7 1 1.2c.4.4.5 1 .5 1.6 0 1.3-.4 2.3-1.3 3-.8.7-2.1 1-3.8 1H7.8zm5-8.3c.6 0 1.2-.1 1.6-.5.4-.3.6-.7.6-1.3 0-1.1-.8-1.7-2.3-1.7H9.3v3.5h3.4zm.5 6c.7 0 1.3-.1 1.7-.4.4-.4.6-.9.6-1.5s-.2-1-.7-1.4c-.4-.3-1-.4-2-.4H9.4v3.8h4z" fill-rule="evenodd"></path></svg></span></button><button aria-label="Italic" title="Italic" type="button" tabindex="-1" class="tox-tbtn" aria-disabled="false" aria-pressed="false"><span class="tox-icon tox-tbtn__icon-wrap"><svg width="24" height="24" focusable="false"><path d="M16.7 4.7l-.1.9h-.3c-.6 0-1 0-1.4.3-.3.3-.4.6-.5 1.1l-2.1 9.8v.6c0 .5.4.8 1.4.8h.2l-.2.8H8l.2-.8h.2c1.1 0 1.8-.5 2-1.5l2-9.8.1-.5c0-.6-.4-.8-1.4-.8h-.3l.2-.9h5.8z" fill-rule="evenodd"></path></svg></span></button><button aria-label="Underline" title="Underline" type="button" tabindex="-1" class="tox-tbtn" aria-disabled="false" aria-pressed="false"><span class="tox-icon tox-tbtn__icon-wrap"><svg width="24" height="24" focusable="false"><path d="M16 5c.6 0 1 .4 1 1v5.5a4 4 0 01-.4 1.8l-1 1.4a5.3 5.3 0 01-5.5 1 5 5 0 01-1.6-1c-.5-.4-.8-.9-1.1-1.4a4 4 0 01-.4-1.8V6c0-.6.4-1 1-1s1 .4 1 1v5.5c0 .3 0 .6.2 1l.6.7a3.3 3.3 0 002.2.8 3.4 3.4 0 002.2-.8c.3-.2.4-.5.6-.8l.2-.9V6c0-.6.4-1 1-1zM8 17h8c.6 0 1 .4 1 1s-.4 1-1 1H8a1 1 0 010-2z" fill-rule="evenodd"></path></svg></span></button><button aria-label="Strikethrough" title="Strikethrough" type="button" tabindex="-1" class="tox-tbtn" aria-disabled="false" aria-pressed="false"><span class="tox-icon tox-tbtn__icon-wrap"><svg width="24" height="24" focusable="false"><g fill-rule="evenodd"><path d="M15.6 8.5c-.5-.7-1-1.1-1.3-1.3-.6-.4-1.3-.6-2-.6-2.7 0-2.8 1.7-2.8 2.1 0 1.6 1.8 2 3.2 2.3 4.4.9 4.6 2.8 4.6 3.9 0 1.4-.7 4.1-5 4.1A6.2 6.2 0 017 16.4l1.5-1.1c.4.6 1.6 2 3.7 2 1.6 0 2.5-.4 3-1.2.4-.8.3-2-.8-2.6-.7-.4-1.6-.7-2.9-1-1-.2-3.9-.8-3.9-3.6C7.6 6 10.3 5 12.4 5c2.9 0 4.2 1.6 4.7 2.4l-1.5 1.1z"></path><path d="M5 11h14a1 1 0 010 2H5a1 1 0 010-2z" fill-rule="nonzero"></path></g></svg></span></button></div><div title="" role="toolbar" data-alloy-tabstop="true" tabindex="-1" class="tox-toolbar__group"><button aria-label="Insert/edit link" title="Insert/edit link" type="button" tabindex="-1" class="tox-tbtn" aria-disabled="false" aria-pressed="false"><span class="tox-icon tox-tbtn__icon-wrap"><svg width="24" height="24" focusable="false"><path d="M6.2 12.3a1 1 0 011.4 1.4l-2.1 2a2 2 0 102.7 2.8l4.8-4.8a1 1 0 000-1.4 1 1 0 111.4-1.3 2.9 2.9 0 010 4L9.6 20a3.9 3.9 0 01-5.5-5.5l2-2zm11.6-.6a1 1 0 01-1.4-1.4l2-2a2 2 0 10-2.6-2.8L11 10.3a1 1 0 000 1.4A1 1 0 119.6 13a2.9 2.9 0 010-4L14.4 4a3.9 3.9 0 015.5 5.5l-2 2z" fill-rule="nonzero"></path></svg></span></button><button aria-label="Insert/edit code sample" title="Insert/edit code sample" type="button" tabindex="-1" class="tox-tbtn" aria-disabled="false" aria-pressed="false"><span class="tox-icon tox-tbtn__icon-wrap"><svg width="24" height="26" focusable="false"><path d="M7.1 11a2.8 2.8 0 01-.8 2 2.8 2.8 0 01.8 2v1.7c0 .3.1.6.4.8.2.3.5.4.8.4.3 0 .4.2.4.4v.8c0 .2-.1.4-.4.4-.7 0-1.4-.3-2-.8-.5-.6-.8-1.3-.8-2V15c0-.3-.1-.6-.4-.8-.2-.3-.5-.4-.8-.4a.4.4 0 01-.4-.4v-.8c0-.2.2-.4.4-.4.3 0 .6-.1.8-.4.3-.2.4-.5.4-.8V9.3c0-.7.3-1.4.8-2 .6-.5 1.3-.8 2-.8.3 0 .4.2.4.4v.8c0 .2-.1.4-.4.4-.3 0-.6.1-.8.4-.3.2-.4.5-.4.8V11zm9.8 0V9.3c0-.3-.1-.6-.4-.8-.2-.3-.5-.4-.8-.4a.4.4 0 01-.4-.4V7c0-.2.1-.4.4-.4.7 0 1.4.3 2 .8.5.6.8 1.3.8 2V11c0 .3.1.6.4.8.2.3.5.4.8.4.2 0 .4.2.4.4v.8c0 .2-.2.4-.4.4-.3 0-.6.1-.8.4-.3.2-.4.5-.4.8v1.7c0 .7-.3 1.4-.8 2-.6.5-1.3.8-2 .8a.4.4 0 01-.4-.4v-.8c0-.2.1-.4.4-.4.3 0 .6-.1.8-.4.3-.2.4-.5.4-.8V15a2.8 2.8 0 01.8-2 2.8 2.8 0 01-.8-2zm-3.3-.4c0 .4-.1.8-.5 1.1-.3.3-.7.5-1.1.5-.4 0-.8-.2-1.1-.5-.4-.3-.5-.7-.5-1.1 0-.5.1-.9.5-1.2.3-.3.7-.4 1.1-.4.4 0 .8.1 1.1.4.4.3.5.7.5 1.2zM12 13c.4 0 .8.1 1.1.5.4.3.5.7.5 1.1 0 1-.1 1.6-.5 2a3 3 0 01-1.1 1c-.4.3-.8.4-1.1.4a.5.5 0 01-.5-.5V17a3 3 0 001-.2l.6-.6c-.6 0-1-.2-1.3-.5-.2-.3-.3-.7-.3-1 0-.5.1-1 .5-1.2.3-.4.7-.5 1.1-.5z" fill-rule="evenodd"></path></svg></span></button><button aria-label="Insert Image" title="Insert Image" type="button" tabindex="-1" class="tox-tbtn" aria-disabled="false"><span class="tox-icon tox-tbtn__icon-wrap"><svg width="24" height="24" focusable="false"><path d="M5 15.7l3.3-3.2c.3-.3.7-.3 1 0L12 15l4.1-4c.3-.4.8-.4 1 0l2 1.9V5H5v10.7zM5 18V19h3l2.8-2.9-2-2L5 17.9zm14-3l-2.5-2.4-6.4 6.5H19v-4zM4 3h16c.6 0 1 .4 1 1v16c0 .6-.4 1-1 1H4a1 1 0 01-1-1V4c0-.6.4-1 1-1zm6 8a2 2 0 100-4 2 2 0 000 4z" fill-rule="nonzero"></path></svg></span></button><button aria-label="Blockquote" title="Blockquote" type="button" tabindex="-1" class="tox-tbtn" aria-disabled="false" aria-pressed="false"><span class="tox-icon tox-tbtn__icon-wrap"><svg width="24" height="24" focusable="false"><path d="M7.5 17h.9c.4 0 .7-.2.9-.6L11 13V8c0-.6-.4-1-1-1H6a1 1 0 00-1 1v4c0 .6.4 1 1 1h2l-1.3 2.7a1 1 0 00.8 1.3zm8 0h.9c.4 0 .7-.2.9-.6L19 13V8c0-.6-.4-1-1-1h-4a1 1 0 00-1 1v4c0 .6.4 1 1 1h2l-1.3 2.7a1 1 0 00.8 1.3z" fill-rule="nonzero"></path></svg></span></button></div><div title="" role="toolbar" data-alloy-tabstop="true" tabindex="-1" class="tox-toolbar__group"><button aria-label="Bullet list" title="Bullet list" type="button" tabindex="-1" class="tox-tbtn" aria-disabled="false" aria-pressed="false"><span class="tox-icon tox-tbtn__icon-wrap"><svg width="24" height="24" focusable="false"><path d="M11 5h8c.6 0 1 .4 1 1s-.4 1-1 1h-8a1 1 0 010-2zm0 6h8c.6 0 1 .4 1 1s-.4 1-1 1h-8a1 1 0 010-2zm0 6h8c.6 0 1 .4 1 1s-.4 1-1 1h-8a1 1 0 010-2zM4.5 6c0-.4.1-.8.4-1 .3-.4.7-.5 1.1-.5.4 0 .8.1 1 .4.4.3.5.7.5 1.1 0 .4-.1.8-.4 1-.3.4-.7.5-1.1.5-.4 0-.8-.1-1-.4-.4-.3-.5-.7-.5-1.1zm0 6c0-.4.1-.8.4-1 .3-.4.7-.5 1.1-.5.4 0 .8.1 1 .4.4.3.5.7.5 1.1 0 .4-.1.8-.4 1-.3.4-.7.5-1.1.5-.4 0-.8-.1-1-.4-.4-.3-.5-.7-.5-1.1zm0 6c0-.4.1-.8.4-1 .3-.4.7-.5 1.1-.5.4 0 .8.1 1 .4.4.3.5.7.5 1.1 0 .4-.1.8-.4 1-.3.4-.7.5-1.1.5-.4 0-.8-.1-1-.4-.4-.3-.5-.7-.5-1.1z" fill-rule="evenodd"></path></svg></span></button><button aria-label="Numbered list" title="Numbered list" type="button" tabindex="-1" class="tox-tbtn" aria-disabled="false" aria-pressed="false"><span class="tox-icon tox-tbtn__icon-wrap"><svg width="24" height="24" focusable="false"><path d="M10 17h8c.6 0 1 .4 1 1s-.4 1-1 1h-8a1 1 0 010-2zm0-6h8c.6 0 1 .4 1 1s-.4 1-1 1h-8a1 1 0 010-2zm0-6h8c.6 0 1 .4 1 1s-.4 1-1 1h-8a1 1 0 110-2zM6 4v3.5c0 .3-.2.5-.5.5a.5.5 0 01-.5-.5V5h-.5a.5.5 0 010-1H6zm-1 8.8l.2.2h1.3c.3 0 .5.2.5.5s-.2.5-.5.5H4.9a1 1 0 01-.9-1V13c0-.4.3-.8.6-1l1.2-.4.2-.3a.2.2 0 00-.2-.2H4.5a.5.5 0 01-.5-.5c0-.3.2-.5.5-.5h1.6c.5 0 .9.4.9 1v.1c0 .4-.3.8-.6 1l-1.2.4-.2.3zM7 17v2c0 .6-.4 1-1 1H4.5a.5.5 0 010-1h1.2c.2 0 .3-.1.3-.3 0-.2-.1-.3-.3-.3H4.4a.4.4 0 110-.8h1.3c.2 0 .3-.1.3-.3 0-.2-.1-.3-.3-.3H4.5a.5.5 0 110-1H6c.6 0 1 .4 1 1z" fill-rule="evenodd"></path></svg></span></button></div><div title="" role="toolbar" data-alloy-tabstop="true" tabindex="-1" class="tox-toolbar__group"><button aria-label="Undo" title="Undo" type="button" tabindex="-1" class="tox-tbtn tox-tbtn--disabled" aria-disabled="true"><span class="tox-icon tox-tbtn__icon-wrap"><svg width="24" height="24" focusable="false"><path d="M6.4 8H12c3.7 0 6.2 2 6.8 5.1.6 2.7-.4 5.6-2.3 6.8a1 1 0 01-1-1.8c1.1-.6 1.8-2.7 1.4-4.6-.5-2.1-2.1-3.5-4.9-3.5H6.4l3.3 3.3a1 1 0 11-1.4 1.4l-5-5a1 1 0 010-1.4l5-5a1 1 0 011.4 1.4L6.4 8z" fill-rule="nonzero"></path></svg></span></button><button aria-label="Redo" title="Redo" type="button" tabindex="-1" class="tox-tbtn tox-tbtn--disabled" aria-disabled="true"><span class="tox-icon tox-tbtn__icon-wrap"><svg width="24" height="24" focusable="false"><path d="M17.6 10H12c-2.8 0-4.4 1.4-4.9 3.5-.4 2 .3 4 1.4 4.6a1 1 0 11-1 1.8c-2-1.2-2.9-4.1-2.3-6.8.6-3 3-5.1 6.8-5.1h5.6l-3.3-3.3a1 1 0 111.4-1.4l5 5a1 1 0 010 1.4l-5 5a1 1 0 01-1.4-1.4l3.3-3.3z" fill-rule="nonzero"></path></svg></span></button></div><div title="" role="toolbar" data-alloy-tabstop="true" tabindex="-1" class="tox-toolbar__group"><button title="Table" aria-label="Table" aria-haspopup="true" type="button" tabindex="-1" data-alloy-tabstop="true" unselectable="on" class="tox-tbtn tox-tbtn--select" aria-expanded="false" style="user-select: none;"><span class="tox-icon tox-tbtn__icon-wrap"><svg width="24" height="24" focusable="false"><path fill-rule="nonzero" d="M19 4a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V6c0-1.1.9-2 2-2h14zM5 14v4h6v-4H5zm14 0h-6v4h6v-4zm0-6h-6v4h6V8zM5 12h6V8H5v4z"></path></svg></span><div class="tox-tbtn__select-chevron"><svg width="10" height="10" focusable="false"><path d="M8.7 2.2c.3-.3.8-.3 1 0 .4.4.4.9 0 1.2L5.7 7.8c-.3.3-.9.3-1.2 0L.2 3.4a.8.8 0 010-1.2c.3-.3.8-.3 1.1 0L5 6l3.7-3.8z" fill-rule="nonzero"></path></svg></div></button></div></div></div><div class="tox-anchorbar"></div></div><div class="tox-sidebar-wrap"><div class="tox-edit-area"><iframe id="tiny-react_45791117021678936157959_ifr" frameborder="0" allowtransparency="true" title="Rich Text Area" class="tox-edit-area__iframe" src="./saved_resource(1).html"></iframe></div><div role="complementary" class="tox-sidebar"><div data-alloy-tabstop="true" tabindex="-1" class="tox-sidebar__slider tox-sidebar--sliding-closed" style="width: 0px;"><div class="tox-sidebar__pane-container"></div></div></div></div></div><div aria-hidden="true" class="tox-throbber" style="display: none;"></div></div></div><div class="d-flex mt-3 mx-0"><div class="col-sm-6 d-none d-sm-block p-0"><div class="d-flex align-items-center mx-0"><div class=""><img class="rounded-circle img-fluid" src="./user_web-1598433228.svg" alt="avatar" style="width: 36px; height: 36px;"></div><div class="ml-2 curr-user-name"><span class="text-secondary sofia-pro float-left" style="font-family: urw-din; font-size: 16px; color: rgb(38, 41, 50);">Commenting as: surajrao250 </span></div></div></div><div class="col-sm-6 px-0"><button disabled="" class="btn btn-sm btn-success float-right sofia-pro h-100" style="background-color: rgb(47, 141, 70);">Submit</button></div></div></div></section><div><div class="row ml-0 mr-0 mt-4 mb-2 w-100"><div class="col-2  col-xs-custom-1 text-center vote-section"><button class="btn vote-button rounded-circle"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up fa-w-14 text-muted" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"></path></svg></button><p class="text-success mb-0 mt-0 sofia-pro"><small>0</small></p><button class="btn vote-button rounded-circle"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14 text-muted" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg></button><p class="nestedStructure"></p></div><div class=" col-10 col-xs-custom-11"><div style="display: none;"><section><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-v" class="svg-inline--fa fa-ellipsis-v fa-w-6 mt-3 text-muted mr-3 float-right dropdown-toggle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512" type="button" id="adminOptions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><path fill="currentColor" d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"></path></svg><div class="dropdown-menu dropdown-menu-right" aria-labelledby="adminOptions"><button class="btn btn-link dropdown-item text-secondary sofia-pro"><img alt="Icon" class="flag-icon" src="./Group5019-1629270879.svg"> Report</button></div></section></div><p class="text-dark text-dark sofia-pro headingStyle d-flex align-items-center"><a href="https://auth.geeksforgeeks.org/user/20je0718/practice/" target="_blank" rel="noreferrer" class="text-secondary text-decoration-none sofia-pro   my-auto">20je0718</a><span class="text-black-50 ml-2 timeStyle">1 month ago</span></p><div class="comment-body mt-2 overflow-hidden"><div class="overflow-hidden commentStyle ck-content urw-din"><p>Easy C++ solution</p>
+<pre class="language-cpp"><code>void subseq(string s,string temp,unordered_set&lt;string&gt; &amp;st){
+        if(s.empty()){
+            st.insert(temp);
+            return;
+        }
+        subseq(s.substr(1),temp+s[0],st);
+        subseq(s.substr(1),temp,st);
+    }
+    set&lt;string&gt; allPossibleSubsequences(string S) {
+        unordered_set&lt;char&gt; s;
+        s.insert('a');
+        s.insert('e');
+        s.insert('i');
+        s.insert('o');
+        s.insert('u');
+        unordered_set&lt;string&gt; st;
+        subseq(S,"",st);
+        set&lt;string&gt; res;
+        for(auto subs:st){
+            // cout&lt;&lt;subs&lt;&lt;" ";
+            if(s.find(subs[0])!=s.end() and s.find(subs.back())==s.end()) res.insert(subs);
+        }
+        return res;
+    }</code></pre>
+<p>&nbsp;</p></div><div><section class="mt-2"><div><span class="text-secondary pl-0 sofia-pro btn btn-light btn-sm" style="cursor: pointer;">Reply <img class="reply-button-icon" alt="Loading..." src="./Group4874-1629269363.svg"></span><a target="_blank" class="text-secondary pl-0 mb-0 pb-0 sofia-pro btn btn-light btn-sm" href="https://discuss.geeksforgeeks.org/comment/d44e88b1295614045d5ff4cf0a613bde"><span class="pb-0 pr-1 sofia-pro">Open Externally</span><img class="pb-1 external-link-icon" alt="" src="./external_link-1629374313.svg"></a></div></section></div></div><a type="button" class="text-success reply-button sofia-pro d-none" data-toggle="collapse" href="https://discuss.geeksforgeeks.org/discuss/prob703691/String%20Subsequence%20Game%20%7C%20Practice%20%7C%20GeeksforGeeks%20/practice/?rel=https%3A%2F%2Fpractice.geeksforgeeks.org%2Fproblems%2Fstring-subsequence-game5515%2F1%3Fpage%3D5%26curated%5B%5D%3D7%26sortBy%3Dsubmissions&amp;mode=light#threads_comment_d44e88b1295614045d5ff4cf0a613bde" role="button" aria-expanded="false" aria-controls="replies">Show 0 Replies</a><div class="collapse" id="threads_comment_d44e88b1295614045d5ff4cf0a613bde"><section class="loader"><div class="alignLoader"><div class="spinner-border" role="status"></div><span class="text-secondary ml-1">Loading...</span></div></section></div></div></div></div><div><div class="row ml-0 mr-0 mt-4 mb-2 w-100"><div class="col-2  col-xs-custom-1 text-center vote-section"><button class="btn vote-button rounded-circle"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up fa-w-14 text-muted" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"></path></svg></button><p class="text-success mb-0 mt-0 sofia-pro"><small>0</small></p><button class="btn vote-button rounded-circle"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14 text-muted" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg></button><p class="nestedStructure"></p></div><div class=" col-10 col-xs-custom-11"><div style="display: none;"><section><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-v" class="svg-inline--fa fa-ellipsis-v fa-w-6 mt-3 text-muted mr-3 float-right dropdown-toggle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512" type="button" id="adminOptions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><path fill="currentColor" d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"></path></svg><div class="dropdown-menu dropdown-menu-right" aria-labelledby="adminOptions"><button class="btn btn-link dropdown-item text-secondary sofia-pro"><img alt="Icon" class="flag-icon" src="./Group5019-1629270879.svg"> Report</button></div></section></div><p class="text-dark text-dark sofia-pro headingStyle d-flex align-items-center"><a href="https://auth.geeksforgeeks.org/user/prmakazad123/practice/" target="_blank" rel="noreferrer" class="text-secondary text-decoration-none sofia-pro   my-auto">prmakazad123</a><span class="text-black-50 ml-2 timeStyle">2 months ago</span></p><div class="comment-body mt-2 overflow-hidden"><div class="overflow-hidden commentStyle ck-content urw-din"><p>static boolean checkVowel(char ch)</p>
+<p>&nbsp; &nbsp; {</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u')</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; {</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return true;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; else</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; {</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return false;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+<p>&nbsp; &nbsp; }</p>
+<p>&nbsp; &nbsp; static void allSub(String s,String ans,TreeSet&lt;String&gt; ts)</p>
+<p>&nbsp; &nbsp; {</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; if(s.length()==0)</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; {</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(ans.length()&gt;=2&amp;&amp;checkVowel(ans.charAt(0))==true&amp;&amp;checkVowel(ans.charAt(ans.length()-1))==false)</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ts.add(ans);</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; char ch=s.charAt(0);</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; String seq=s.substring(1);</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; allSub(seq,ans,ts);</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; allSub(seq,ans+ch,ts);</p>
+<p>&nbsp; &nbsp; }</p>
+<p>&nbsp; &nbsp; static TreeSet&lt;String&gt; allPossibleSubsequences(String s)&nbsp;</p>
+<p>&nbsp; &nbsp; {</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; TreeSet&lt;String&gt;ts=new TreeSet&lt;String&gt;();</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; allSub(s,"",ts);</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; if(ts.size()==0)</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; {</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ts.add("-1");</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; return ts;</p>
+<p>&nbsp; &nbsp; }</p></div><div><section class="mt-2"><div><span class="text-secondary pl-0 sofia-pro btn btn-light btn-sm" style="cursor: pointer;">Reply <img class="reply-button-icon" alt="Loading..." src="./Group4874-1629269363.svg"></span><a target="_blank" class="text-secondary pl-0 mb-0 pb-0 sofia-pro btn btn-light btn-sm" href="https://discuss.geeksforgeeks.org/comment/7a102bac7fd218b00bc4c4ee4e52a272"><span class="pb-0 pr-1 sofia-pro">Open Externally</span><img class="pb-1 external-link-icon" alt="" src="./external_link-1629374313.svg"></a></div></section></div></div><a type="button" class="text-success reply-button sofia-pro d-none" data-toggle="collapse" href="https://discuss.geeksforgeeks.org/discuss/prob703691/String%20Subsequence%20Game%20%7C%20Practice%20%7C%20GeeksforGeeks%20/practice/?rel=https%3A%2F%2Fpractice.geeksforgeeks.org%2Fproblems%2Fstring-subsequence-game5515%2F1%3Fpage%3D5%26curated%5B%5D%3D7%26sortBy%3Dsubmissions&amp;mode=light#threads_comment_7a102bac7fd218b00bc4c4ee4e52a272" role="button" aria-expanded="false" aria-controls="replies">Show 0 Replies</a><div class="collapse" id="threads_comment_7a102bac7fd218b00bc4c4ee4e52a272"><section class="loader"><div class="alignLoader"><div class="spinner-border" role="status"></div><span class="text-secondary ml-1">Loading...</span></div></section></div></div></div></div><div><div class="row ml-0 mr-0 mt-4 mb-2 w-100"><div class="col-2  col-xs-custom-1 text-center vote-section"><button class="btn vote-button rounded-circle"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up fa-w-14 text-muted" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"></path></svg></button><p class="text-success mb-0 mt-0 sofia-pro"><small>0</small></p><button class="btn vote-button rounded-circle"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14 text-muted" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg></button><p class="nestedStructure"></p></div><div class=" col-10 col-xs-custom-11"><div style="display: none;"><section><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-v" class="svg-inline--fa fa-ellipsis-v fa-w-6 mt-3 text-muted mr-3 float-right dropdown-toggle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512" type="button" id="adminOptions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><path fill="currentColor" d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"></path></svg><div class="dropdown-menu dropdown-menu-right" aria-labelledby="adminOptions"><button class="btn btn-link dropdown-item text-secondary sofia-pro"><img alt="Icon" class="flag-icon" src="./Group5019-1629270879.svg"> Report</button></div></section></div><p class="text-dark text-dark sofia-pro headingStyle d-flex align-items-center"><a href="https://auth.geeksforgeeks.org/user/ashishbhadauriya5344/practice/" target="_blank" rel="noreferrer" class="text-secondary text-decoration-none sofia-pro   my-auto">ashishbhadauriya5344</a><span class="text-black-50 ml-2 timeStyle">2 months ago</span></p><div class="comment-body mt-2 overflow-hidden"><div class="overflow-hidden commentStyle ck-content urw-din"><p><strong>java solution !!</strong></p>
+<p><strong>class Solution {</strong></p>
+<p><strong>&nbsp; &nbsp; static TreeSet&lt;String&gt; allPossibleSubsequences(String s) {</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; // code here</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; TreeSet&lt;String&gt;set = new TreeSet&lt;&gt;();</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; String v = "aeiou";</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; String s2 ="";</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; func(s,set,0,s2);</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; return set;</strong></p>
+<p><strong>&nbsp; &nbsp; }</strong></p>
+<p><strong>&nbsp; &nbsp; static void func( String s1,TreeSet&lt;String&gt;set,int i,String s2){</strong></p>
+<p><strong>&nbsp; &nbsp; if( s2.length()&gt;=2){</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; char first=s2.charAt(0);</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; char last=s2.charAt(s2.length()-1);</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; if((first=='a'|| first=='e' || first=='i'||first=='o' || first=='u') &amp;&amp;&nbsp;</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(last!='a'&amp;&amp; last!='e' &amp;&amp; last!='i'&amp;&amp; last!='o' &amp;&amp; last!='u') ){</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;set.add(s2);&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; }&nbsp; &nbsp;&nbsp;</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp;if (i==s1.length()) {</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return;</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; }</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; if(i &lt; s1.length()){</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; func(s1,set,i+1,s2);</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; func(s1,set,i+1,s2+s1.charAt(i));&nbsp; &nbsp; &nbsp;</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</strong></p>
+<p><strong>&nbsp; &nbsp; }</strong></p>
+<p>&nbsp;</p>
+<p><strong>}</strong></p></div><div><section class="mt-2"><div><span class="text-secondary pl-0 sofia-pro btn btn-light btn-sm" style="cursor: pointer;">Reply <img class="reply-button-icon" alt="Loading..." src="./Group4874-1629269363.svg"></span><a target="_blank" class="text-secondary pl-0 mb-0 pb-0 sofia-pro btn btn-light btn-sm" href="https://discuss.geeksforgeeks.org/comment/b44de6fd8cb828f4dab26b6fbaa5ebc9"><span class="pb-0 pr-1 sofia-pro">Open Externally</span><img class="pb-1 external-link-icon" alt="" src="./external_link-1629374313.svg"></a></div></section></div></div><a type="button" class="text-success reply-button sofia-pro d-none" data-toggle="collapse" href="https://discuss.geeksforgeeks.org/discuss/prob703691/String%20Subsequence%20Game%20%7C%20Practice%20%7C%20GeeksforGeeks%20/practice/?rel=https%3A%2F%2Fpractice.geeksforgeeks.org%2Fproblems%2Fstring-subsequence-game5515%2F1%3Fpage%3D5%26curated%5B%5D%3D7%26sortBy%3Dsubmissions&amp;mode=light#threads_comment_b44de6fd8cb828f4dab26b6fbaa5ebc9" role="button" aria-expanded="false" aria-controls="replies">Show 0 Replies</a><div class="collapse" id="threads_comment_b44de6fd8cb828f4dab26b6fbaa5ebc9"><section class="loader"><div class="alignLoader"><div class="spinner-border" role="status"></div><span class="text-secondary ml-1">Loading...</span></div></section></div></div></div></div><div><div class="row ml-0 mr-0 mt-4 mb-2 w-100"><div class="col-2  col-xs-custom-1 text-center vote-section"><button class="btn vote-button rounded-circle"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up fa-w-14 text-muted" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"></path></svg></button><p class="text-success mb-0 mt-0 sofia-pro"><small>0</small></p><button class="btn vote-button rounded-circle"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14 text-muted" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg></button><p class="nestedStructure"></p></div><div class=" col-10 col-xs-custom-11"><div style="display: none;"><section><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-v" class="svg-inline--fa fa-ellipsis-v fa-w-6 mt-3 text-muted mr-3 float-right dropdown-toggle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512" type="button" id="adminOptions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><path fill="currentColor" d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"></path></svg><div class="dropdown-menu dropdown-menu-right" aria-labelledby="adminOptions"><button class="btn btn-link dropdown-item text-secondary sofia-pro"><img alt="Icon" class="flag-icon" src="./Group5019-1629270879.svg"> Report</button></div></section></div><p class="text-dark text-dark sofia-pro headingStyle d-flex align-items-center"><a href="https://auth.geeksforgeeks.org/user/adil03320/practice/" target="_blank" rel="noreferrer" class="text-secondary text-decoration-none sofia-pro   my-auto">adil03320</a><span class="text-black-50 ml-2 timeStyle">3 months ago</span></p><div class="comment-body mt-2 overflow-hidden"><div class="overflow-hidden commentStyle ck-content urw-din"><pre class="language-cpp"><code> private:
+    void solve(string str, vector&lt;char&gt; &amp;s, int i, int n, vector&lt;vector&lt;char&gt;&gt; &amp;v)
+    {
+        if(i&lt;n)
+        {
+            
+            s.push_back(str[i]);
+            v.push_back(s);
+            solve(str,s,i+1,n,v);
+            s.pop_back();
+            solve(str,s,i+1,n,v);
+        }
+       
+    }
+   bool isValid(string s)
+  {
+      int n = s.size();
+      if(s[n-1]=='a' || s[n-1]=='e' || s[n-1]=='i'|| s[n-1]=='o'|| s[n-1]=='u') return false;
+      if(s[0]!='a' &amp;&amp; s[0]!='e' &amp;&amp; s[0]!='i' &amp;&amp; s[0]!='o' &amp;&amp; s[0]!='u') return false;
+      return true;
+      
+  }
+  public:
+    set&lt;string&gt; allPossibleSubsequences(string S) {
+        vector&lt;vector&lt;char&gt;&gt; v;
+        vector&lt;char&gt; s;
+        solve(S,s,0,S.size(),v);
+        set&lt;string&gt; st;
+        for(int i=0;i&lt;v.size();i++)
+        {   string temp = "";
+            for(int j=0;j&lt;v[i].size();j++)
+            {
+                temp+=v[i][j];
+            }
+            if(isValid(temp))
+            {
+                st.insert(temp);
+            }
+        }
+        return st;
+    }</code></pre>
+<p>&nbsp;</p></div><div><section class="mt-2"><div><span class="text-secondary pl-0 sofia-pro btn btn-light btn-sm" style="cursor: pointer;">Reply <img class="reply-button-icon" alt="Loading..." src="./Group4874-1629269363.svg"></span><a target="_blank" class="text-secondary pl-0 mb-0 pb-0 sofia-pro btn btn-light btn-sm" href="https://discuss.geeksforgeeks.org/comment/122698b756584d4b88a6d96d9d4c3928"><span class="pb-0 pr-1 sofia-pro">Open Externally</span><img class="pb-1 external-link-icon" alt="" src="./external_link-1629374313.svg"></a></div></section></div></div><a type="button" class="text-success reply-button sofia-pro d-none" data-toggle="collapse" href="https://discuss.geeksforgeeks.org/discuss/prob703691/String%20Subsequence%20Game%20%7C%20Practice%20%7C%20GeeksforGeeks%20/practice/?rel=https%3A%2F%2Fpractice.geeksforgeeks.org%2Fproblems%2Fstring-subsequence-game5515%2F1%3Fpage%3D5%26curated%5B%5D%3D7%26sortBy%3Dsubmissions&amp;mode=light#threads_comment_122698b756584d4b88a6d96d9d4c3928" role="button" aria-expanded="false" aria-controls="replies">Show 0 Replies</a><div class="collapse" id="threads_comment_122698b756584d4b88a6d96d9d4c3928"><section class="loader"><div class="alignLoader"><div class="spinner-border" role="status"></div><span class="text-secondary ml-1">Loading...</span></div></section></div></div></div></div><div><div class="row ml-0 mr-0 mt-4 mb-2 w-100"><div class="col-2  col-xs-custom-1 text-center vote-section"><button class="btn vote-button rounded-circle"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up fa-w-14 text-muted" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"></path></svg></button><p class="text-success mb-0 mt-0 sofia-pro"><small>0</small></p><button class="btn vote-button rounded-circle"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14 text-muted" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg></button><p class="nestedStructure"></p></div><div class=" col-10 col-xs-custom-11"><div style="display: none;"><section><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-v" class="svg-inline--fa fa-ellipsis-v fa-w-6 mt-3 text-muted mr-3 float-right dropdown-toggle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512" type="button" id="adminOptions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><path fill="currentColor" d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"></path></svg><div class="dropdown-menu dropdown-menu-right" aria-labelledby="adminOptions"><button class="btn btn-link dropdown-item text-secondary sofia-pro"><img alt="Icon" class="flag-icon" src="./Group5019-1629270879.svg"> Report</button></div></section></div><p class="text-dark text-dark sofia-pro headingStyle d-flex align-items-center"><a href="https://auth.geeksforgeeks.org/user/priyanshupk007/practice/" target="_blank" rel="noreferrer" class="text-secondary text-decoration-none sofia-pro   my-auto">priyanshupk007</a><span class="text-black-50 ml-2 timeStyle">4 months ago</span></p><div class="comment-body mt-2 overflow-hidden"><div class="overflow-hidden commentStyle ck-content urw-din"><p><em><strong>JAVA</strong></em></p>
+<pre class="language-markup"><code>class Solution {
+    static TreeSet&lt;String&gt; allPossibleSubsequences(String s) {
+        // code here
+        TreeSet&lt;String&gt; set=new TreeSet&lt;String&gt;();
+        HashSet&lt;Character&gt; v=new HashSet&lt;&gt;();
+        v.add('a');
+        v.add('e');
+        v.add('i');v.add('o');v.add('u');
+        String ans="";
+        for(int i=0;i&lt;s.length();i++)
+        {if(v.contains(s.charAt(i)))
+            help(s,i,ans,set,v);
+        }
+        return set;
+    }
+    static void help(String s,int i,String ans, TreeSet&lt;String&gt; set,HashSet&lt;Character&gt; v)
+    {
+        if(i&gt;=s.length()) return ;
+        ans+=s.charAt(i);
+        if(!v.contains(s.charAt(i))) set.add(ans);
+        for(int k=i+1;k&lt;s.length();k++) help(s,k,ans,set,v);
+    }
+}</code></pre>
+<p>&nbsp;</p></div><div><section class="mt-2"><div><span class="text-secondary pl-0 sofia-pro btn btn-light btn-sm" style="cursor: pointer;">Reply <img class="reply-button-icon" alt="Loading..." src="./Group4874-1629269363.svg"></span><a target="_blank" class="text-secondary pl-0 mb-0 pb-0 sofia-pro btn btn-light btn-sm" href="https://discuss.geeksforgeeks.org/comment/5a75ce80953b4642afb37f6f49d50a0f"><span class="pb-0 pr-1 sofia-pro">Open Externally</span><img class="pb-1 external-link-icon" alt="" src="./external_link-1629374313.svg"></a></div></section></div></div><a type="button" class="text-success reply-button sofia-pro d-none" data-toggle="collapse" href="https://discuss.geeksforgeeks.org/discuss/prob703691/String%20Subsequence%20Game%20%7C%20Practice%20%7C%20GeeksforGeeks%20/practice/?rel=https%3A%2F%2Fpractice.geeksforgeeks.org%2Fproblems%2Fstring-subsequence-game5515%2F1%3Fpage%3D5%26curated%5B%5D%3D7%26sortBy%3Dsubmissions&amp;mode=light#threads_comment_5a75ce80953b4642afb37f6f49d50a0f" role="button" aria-expanded="false" aria-controls="replies">Show 0 Replies</a><div class="collapse" id="threads_comment_5a75ce80953b4642afb37f6f49d50a0f"><section class="loader"><div class="alignLoader"><div class="spinner-border" role="status"></div><span class="text-secondary ml-1">Loading...</span></div></section></div></div></div></div><div><div class="row ml-0 mr-0 mt-4 mb-2 w-100"><div class="col-2  col-xs-custom-1 text-center vote-section"><button class="btn vote-button rounded-circle"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up fa-w-14 text-muted" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"></path></svg></button><p class="text-success mb-0 mt-0 sofia-pro"><small>+1</small></p><button class="btn vote-button rounded-circle"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14 text-muted" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg></button><p class="nestedStructure"></p></div><div class=" col-10 col-xs-custom-11"><div style="display: none;"><section><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-v" class="svg-inline--fa fa-ellipsis-v fa-w-6 mt-3 text-muted mr-3 float-right dropdown-toggle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512" type="button" id="adminOptions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><path fill="currentColor" d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"></path></svg><div class="dropdown-menu dropdown-menu-right" aria-labelledby="adminOptions"><button class="btn btn-link dropdown-item text-secondary sofia-pro"><img alt="Icon" class="flag-icon" src="./Group5019-1629270879.svg"> Report</button></div></section></div><p class="text-dark text-dark sofia-pro headingStyle d-flex align-items-center"><a href="https://auth.geeksforgeeks.org/user/geeky_ank/practice/" target="_blank" rel="noreferrer" class="text-secondary text-decoration-none sofia-pro   my-auto">geeky_ank</a><span class="text-black-50 ml-2 timeStyle">4 months ago</span></p><div class="comment-body mt-2 overflow-hidden"><div class="overflow-hidden commentStyle ck-content urw-din"><p>How to optimize this? not passing testcase 4</p>
+<pre class="language-python"><code>class Solution:
+    def allPossibleSubsequences (ob, S):
+        # code here 
+        vowels = "aeiou"
+        
+        def subs(arr,out,res):
+            
+            if len(arr)==0:
+                if len(out)&gt;=2 and out[0] in vowels and out[-1] not in vowels and out not in res:
+                    res.append(out)
+                return
+            
+            out1 = out
+            out2 = out
+            out2+=arr[0]
+            subs(arr[1:],out1,res)
+            subs(arr[1:],out2,res)
+            return
+        
+        res = []
+        out = ""
+        subs(S,out,res)
+        
+
+        # res = list(set(res))
+        return sorted(res)</code></pre>
+<p>&nbsp;</p></div><div><section class="mt-2"><div><span class="text-secondary pl-0 sofia-pro btn btn-light btn-sm" style="cursor: pointer;">Reply <img class="reply-button-icon" alt="Loading..." src="./Group4874-1629269363.svg"></span><a target="_blank" class="text-secondary pl-0 mb-0 pb-0 sofia-pro btn btn-light btn-sm" href="https://discuss.geeksforgeeks.org/comment/1f31c1ad4f77fc4502d82adabddcc68e"><span class="pb-0 pr-1 sofia-pro">Open Externally</span><img class="pb-1 external-link-icon" alt="" src="./external_link-1629374313.svg"></a></div></section></div></div><a type="button" class="text-success reply-button sofia-pro" data-toggle="collapse" href="https://discuss.geeksforgeeks.org/discuss/prob703691/String%20Subsequence%20Game%20%7C%20Practice%20%7C%20GeeksforGeeks%20/practice/?rel=https%3A%2F%2Fpractice.geeksforgeeks.org%2Fproblems%2Fstring-subsequence-game5515%2F1%3Fpage%3D5%26curated%5B%5D%3D7%26sortBy%3Dsubmissions&amp;mode=light#threads_comment_1f31c1ad4f77fc4502d82adabddcc68e" role="button" aria-expanded="false" aria-controls="replies">Show 1 Replies</a><div class="collapse" id="threads_comment_1f31c1ad4f77fc4502d82adabddcc68e"><section class="loader"><div class="alignLoader"><div class="spinner-border" role="status"></div><span class="text-secondary ml-1">Loading...</span></div></section></div></div></div></div><div><div class="row ml-0 mr-0 mt-4 mb-2 w-100"><div class="col-2  col-xs-custom-1 text-center vote-section"><button class="btn vote-button rounded-circle"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up fa-w-14 text-muted" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"></path></svg></button><p class="text-success mb-0 mt-0 sofia-pro"><small>0</small></p><button class="btn vote-button rounded-circle"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14 text-muted" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg></button><p class="nestedStructure"></p></div><div class=" col-10 col-xs-custom-11"><div style="display: none;"><section><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-v" class="svg-inline--fa fa-ellipsis-v fa-w-6 mt-3 text-muted mr-3 float-right dropdown-toggle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512" type="button" id="adminOptions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><path fill="currentColor" d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"></path></svg><div class="dropdown-menu dropdown-menu-right" aria-labelledby="adminOptions"><button class="btn btn-link dropdown-item text-secondary sofia-pro"><img alt="Icon" class="flag-icon" src="./Group5019-1629270879.svg"> Report</button></div></section></div><p class="text-dark text-dark sofia-pro headingStyle d-flex align-items-center"><a href="https://auth.geeksforgeeks.org/user/rishu/practice/" target="_blank" rel="noreferrer" class="text-secondary text-decoration-none sofia-pro   my-auto">rishu</a><span class="text-black-50 ml-2 timeStyle">5 months ago</span></p><div class="comment-body mt-2 overflow-hidden"><div class="overflow-hidden commentStyle ck-content urw-din"><p><em><strong>JAVA:</strong></em></p>
+<p>class Solution {</p>
+<p>&nbsp; &nbsp; static TreeSet&lt;String&gt; allPossibleSubsequences(String s) {</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; // code here</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; int n=s.length();</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; String str = "";</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; TreeSet&lt;String&gt; ts = new TreeSet&lt;&gt;();&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; solve(s, ts, 0, str);</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; return ts;</p>
+<p>&nbsp; &nbsp; }</p>
+<p>&nbsp; &nbsp;&nbsp;</p>
+<p>&nbsp; &nbsp; static void solve(String s, TreeSet&lt;String&gt; t, int i, String str){</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; if(i&gt;=s.length()){</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(isCondition(str))</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; t.add(str);</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return;&nbsp; &nbsp;&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; solve(s, t, i+1, str+s.charAt(i));</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; solve(s, t ,i+1, str);</p>
+<p>&nbsp; &nbsp; }</p>
+<p>&nbsp; &nbsp;&nbsp;</p>
+<p>&nbsp; &nbsp; static boolean isCondition(String S){</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; if(S.length()&lt;=1)</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return false;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; char s = S.charAt(0);</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; char e = S.charAt(S.length()-1);</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; if(s=='a' || s=='e' || s=='i' || s=='o' || s=='u')</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(e!='a' &amp;&amp; e!='e' &amp;&amp; e!='i' &amp;&amp; e!='o' &amp;&amp; e!='u')</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return true;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; return false;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>
+<p>&nbsp; &nbsp; }&nbsp;</p>
+<p>&nbsp; &nbsp;&nbsp;</p>
+<p>}</p></div><div><section class="mt-2"><div><span class="text-secondary pl-0 sofia-pro btn btn-light btn-sm" style="cursor: pointer;">Reply <img class="reply-button-icon" alt="Loading..." src="./Group4874-1629269363.svg"></span><a target="_blank" class="text-secondary pl-0 mb-0 pb-0 sofia-pro btn btn-light btn-sm" href="https://discuss.geeksforgeeks.org/comment/ac6122294fddde6fdb469b0ed27db69e"><span class="pb-0 pr-1 sofia-pro">Open Externally</span><img class="pb-1 external-link-icon" alt="" src="./external_link-1629374313.svg"></a></div></section></div></div><a type="button" class="text-success reply-button sofia-pro d-none" data-toggle="collapse" href="https://discuss.geeksforgeeks.org/discuss/prob703691/String%20Subsequence%20Game%20%7C%20Practice%20%7C%20GeeksforGeeks%20/practice/?rel=https%3A%2F%2Fpractice.geeksforgeeks.org%2Fproblems%2Fstring-subsequence-game5515%2F1%3Fpage%3D5%26curated%5B%5D%3D7%26sortBy%3Dsubmissions&amp;mode=light#threads_comment_ac6122294fddde6fdb469b0ed27db69e" role="button" aria-expanded="false" aria-controls="replies">Show 0 Replies</a><div class="collapse" id="threads_comment_ac6122294fddde6fdb469b0ed27db69e"><section class="loader"><div class="alignLoader"><div class="spinner-border" role="status"></div><span class="text-secondary ml-1">Loading...</span></div></section></div></div></div></div><div><div class="row ml-0 mr-0 mt-4 mb-2 w-100"><div class="col-2  col-xs-custom-1 text-center vote-section"><button class="btn vote-button rounded-circle"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up fa-w-14 text-muted" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"></path></svg></button><p class="text-success mb-0 mt-0 sofia-pro"><small>0</small></p><button class="btn vote-button rounded-circle"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14 text-muted" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg></button><p class="nestedStructure"></p></div><div class=" col-10 col-xs-custom-11"><div style="display: none;"><section><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-v" class="svg-inline--fa fa-ellipsis-v fa-w-6 mt-3 text-muted mr-3 float-right dropdown-toggle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512" type="button" id="adminOptions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><path fill="currentColor" d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"></path></svg><div class="dropdown-menu dropdown-menu-right" aria-labelledby="adminOptions"><button class="btn btn-link dropdown-item text-secondary sofia-pro"><img alt="Icon" class="flag-icon" src="./Group5019-1629270879.svg"> Report</button></div></section></div><p class="text-dark text-dark sofia-pro headingStyle d-flex align-items-center"><a href="https://auth.geeksforgeeks.org/user/devsamb9g9t/practice/" target="_blank" rel="noreferrer" class="text-secondary text-decoration-none sofia-pro   my-auto">devsamb9g9t</a><span class="text-black-50 ml-2 timeStyle">6 months ago</span></p><div class="comment-body mt-2 overflow-hidden"><div class="overflow-hidden commentStyle ck-content urw-din"><p><strong>Easy C++ Solution</strong></p>
+<p>&nbsp;</p>
+<pre class="language-cpp"><code>class Solution {
+  private:
+    void solve(int i, set&lt;string&gt; &amp;ans, string S, string &amp;subs){
+        // base case
+        if(i &gt;= S.size()){
+            int size = subs.size();
+            if(subs[0] != 'a' &amp;&amp; subs[0] != 'e' &amp;&amp; subs[0] != 'i' &amp;&amp; subs[0] != 'o' &amp;&amp; subs[0] != 'u') return;
+            if(subs[size-1] == 'a' || subs[size-1] == 'e' || subs[size-1] == 'i' || subs[size-1] == 'o' || subs[size-1] == 'u') return;
+            ans.insert(subs);
+            return;
+        }
+        
+        // pick
+        subs.push_back(S[i]);
+        solve(i+1,ans,S,subs);
+        // backtrack
+        subs.pop_back();
+        // not pick
+        solve(i+1,ans,S,subs);
+    }
+  public:
+    set&lt;string&gt; allPossibleSubsequences(string S) {
+        set&lt;string&gt; ans;
+        string subs;
+        solve(0,ans,S,subs);
+        return ans;
+    }
+};</code></pre>
+<p>&nbsp;</p></div><div><section class="mt-2"><div><span class="text-secondary pl-0 sofia-pro btn btn-light btn-sm" style="cursor: pointer;">Reply <img class="reply-button-icon" alt="Loading..." src="./Group4874-1629269363.svg"></span><a target="_blank" class="text-secondary pl-0 mb-0 pb-0 sofia-pro btn btn-light btn-sm" href="https://discuss.geeksforgeeks.org/comment/922a3c5ef5c8855a7445530605f0c938"><span class="pb-0 pr-1 sofia-pro">Open Externally</span><img class="pb-1 external-link-icon" alt="" src="./external_link-1629374313.svg"></a></div></section></div></div><a type="button" class="text-success reply-button sofia-pro d-none" data-toggle="collapse" href="https://discuss.geeksforgeeks.org/discuss/prob703691/String%20Subsequence%20Game%20%7C%20Practice%20%7C%20GeeksforGeeks%20/practice/?rel=https%3A%2F%2Fpractice.geeksforgeeks.org%2Fproblems%2Fstring-subsequence-game5515%2F1%3Fpage%3D5%26curated%5B%5D%3D7%26sortBy%3Dsubmissions&amp;mode=light#threads_comment_922a3c5ef5c8855a7445530605f0c938" role="button" aria-expanded="false" aria-controls="replies">Show 0 Replies</a><div class="collapse" id="threads_comment_922a3c5ef5c8855a7445530605f0c938"><section class="loader"><div class="alignLoader"><div class="spinner-border" role="status"></div><span class="text-secondary ml-1">Loading...</span></div></section></div></div></div></div><div><div class="row ml-0 mr-0 mt-4 mb-2 w-100"><div class="col-2  col-xs-custom-1 text-center vote-section"><button class="btn vote-button rounded-circle"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up fa-w-14 text-muted" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"></path></svg></button><p class="text-success mb-0 mt-0 sofia-pro"><small>0</small></p><button class="btn vote-button rounded-circle"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14 text-muted" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg></button><p class="nestedStructure"></p></div><div class=" col-10 col-xs-custom-11"><div style="display: none;"><section><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-v" class="svg-inline--fa fa-ellipsis-v fa-w-6 mt-3 text-muted mr-3 float-right dropdown-toggle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512" type="button" id="adminOptions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><path fill="currentColor" d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"></path></svg><div class="dropdown-menu dropdown-menu-right" aria-labelledby="adminOptions"><button class="btn btn-link dropdown-item text-secondary sofia-pro"><img alt="Icon" class="flag-icon" src="./Group5019-1629270879.svg"> Report</button></div></section></div><p class="text-dark text-dark sofia-pro headingStyle d-flex align-items-center"><a href="https://auth.geeksforgeeks.org/user/code02_code02_code02/practice/" target="_blank" rel="noreferrer" class="text-secondary text-decoration-none sofia-pro   my-auto">code02_code02_code02</a><span class="text-black-50 ml-2 timeStyle">6 months ago</span></p><div class="comment-body mt-2 overflow-hidden"><div class="overflow-hidden commentStyle ck-content urw-din"><p><strong>SIMPLE ITERATIVE C++ SOLUTION</strong></p>
+<p><strong>bool check(string s)</strong></p>
+<p><strong>&nbsp; &nbsp; {</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; int n=s.length();</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; if(s[0]=='a' || s[0]=='e' || s[0]=='i' || s[0]=='o' || s[0]=='u')</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; {</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(s[n-1]!='a' &amp;&amp; s[n-1]!='e' &amp;&amp; s[n-1]!='i' &amp;&amp; s[n-1]!='o' &amp;&amp; s[n-1]!='u')</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return true;</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; }</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; return false;</strong></p>
+<p><strong>&nbsp; &nbsp; }</strong></p>
+<p><strong>&nbsp; &nbsp; set&lt;string&gt; allPossibleSubsequences(string S) {</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; // code here</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; set&lt;string&gt;res;</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; int n=S.length();</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; int total = pow(2,n);</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; for(int i=0;i&lt;total;i++)</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; {</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; string temp="";</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for(int j=0;j&lt;n;j++)</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(i &amp; (1&lt;&lt;j))</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; temp+=S[j];</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(temp.length()&gt;1 &amp;&amp; check(temp))</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; res.insert(temp);</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; }</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; return res;</strong></p>
+<p><strong>&nbsp; &nbsp; }</strong></p></div><div><section class="mt-2"><div><span class="text-secondary pl-0 sofia-pro btn btn-light btn-sm" style="cursor: pointer;">Reply <img class="reply-button-icon" alt="Loading..." src="./Group4874-1629269363.svg"></span><a target="_blank" class="text-secondary pl-0 mb-0 pb-0 sofia-pro btn btn-light btn-sm" href="https://discuss.geeksforgeeks.org/comment/e7c1ad692c5030291f4801c004d7c77d"><span class="pb-0 pr-1 sofia-pro">Open Externally</span><img class="pb-1 external-link-icon" alt="" src="./external_link-1629374313.svg"></a></div></section></div></div><a type="button" class="text-success reply-button sofia-pro d-none" data-toggle="collapse" href="https://discuss.geeksforgeeks.org/discuss/prob703691/String%20Subsequence%20Game%20%7C%20Practice%20%7C%20GeeksforGeeks%20/practice/?rel=https%3A%2F%2Fpractice.geeksforgeeks.org%2Fproblems%2Fstring-subsequence-game5515%2F1%3Fpage%3D5%26curated%5B%5D%3D7%26sortBy%3Dsubmissions&amp;mode=light#threads_comment_e7c1ad692c5030291f4801c004d7c77d" role="button" aria-expanded="false" aria-controls="replies">Show 0 Replies</a><div class="collapse" id="threads_comment_e7c1ad692c5030291f4801c004d7c77d"><section class="loader"><div class="alignLoader"><div class="spinner-border" role="status"></div><span class="text-secondary ml-1">Loading...</span></div></section></div></div></div></div><div><div class="row ml-0 mr-0 mt-4 mb-2 w-100"><div class="col-2  col-xs-custom-1 text-center vote-section"><button class="btn vote-button rounded-circle"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up fa-w-14 text-muted" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"></path></svg></button><p class="text-success mb-0 mt-0 sofia-pro"><small>0</small></p><button class="btn vote-button rounded-circle"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14 text-muted" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg></button><p class="nestedStructure"></p></div><div class=" col-10 col-xs-custom-11"><div style="display: none;"><section><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-v" class="svg-inline--fa fa-ellipsis-v fa-w-6 mt-3 text-muted mr-3 float-right dropdown-toggle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512" type="button" id="adminOptions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><path fill="currentColor" d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"></path></svg><div class="dropdown-menu dropdown-menu-right" aria-labelledby="adminOptions"><button class="btn btn-link dropdown-item text-secondary sofia-pro"><img alt="Icon" class="flag-icon" src="./Group5019-1629270879.svg"> Report</button></div></section></div><p class="text-dark text-dark sofia-pro headingStyle d-flex align-items-center"><a href="https://auth.geeksforgeeks.org/user/sabdeaditya2019/practice/" target="_blank" rel="noreferrer" class="text-secondary text-decoration-none sofia-pro   my-auto">sabdeaditya2019</a><span class="text-black-50 ml-2 timeStyle">6 months ago</span></p><div class="comment-body mt-2 overflow-hidden"><div class="overflow-hidden commentStyle ck-content urw-din"><p>Java Solution</p>
+<p>class Solution {</p>
+<p>&nbsp; &nbsp; // static&nbsp; TreeSet &lt;String&gt; set = new TreeSet&lt;&gt;();</p>
+<p>&nbsp; &nbsp; static TreeSet&lt;String&gt; allPossibleSubsequences(String s) {</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; TreeSet &lt;String&gt; set = new TreeSet&lt;&gt;();</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; String v = "aeiou";</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; String s2 ="";</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; func(s,set,0,s2);</p>
+<p>&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; return set;</p>
+<p>&nbsp; &nbsp; }</p>
+<p>&nbsp; &nbsp;&nbsp;</p>
+<p>&nbsp; &nbsp; static void func( String s1,TreeSet&lt;String&gt; set,int i,String s2){</p>
+<p>&nbsp; &nbsp; if( s2.length()&gt;=2){</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; if((s2.charAt(0)=='a'|| s2.charAt(0)=='e' || s2.charAt(0)=='i'||s2.charAt(0)=='o'&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; || s2.charAt(0)=='u')&nbsp; &nbsp;&amp;&amp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(s2.charAt(s2.length()-1)!='a'&amp;&amp; s2.charAt(s2.length()-1)!='e' &amp;&amp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;s2.charAt(s2.length()-1)!='i'&amp;&amp; s2.charAt(s2.length()-1)!='o' &amp;&amp; s2.charAt(s2.length()-1)!='u') ){</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;set.add(s2);&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</p>
+<p>&nbsp; &nbsp; }&nbsp; &nbsp;&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;if (i==s1.length()) {</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; }</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; if(i &lt; s1.length()){</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; func(s1,set,i+1,s2);</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; func(s1,set,i+1,s2+s1.charAt(i));&nbsp; &nbsp; &nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</p>
+<p>&nbsp; &nbsp; &nbsp;&nbsp;</p>
+<p>&nbsp; &nbsp; }</p>
+<p>}</p></div><div><section class="mt-2"><div><span class="text-secondary pl-0 sofia-pro btn btn-light btn-sm" style="cursor: pointer;">Reply <img class="reply-button-icon" alt="Loading..." src="./Group4874-1629269363.svg"></span><a target="_blank" class="text-secondary pl-0 mb-0 pb-0 sofia-pro btn btn-light btn-sm" href="https://discuss.geeksforgeeks.org/comment/a0a2ccff88bae766ea1d31cc696c5a40"><span class="pb-0 pr-1 sofia-pro">Open Externally</span><img class="pb-1 external-link-icon" alt="" src="./external_link-1629374313.svg"></a></div></section></div></div><a type="button" class="text-success reply-button sofia-pro d-none" data-toggle="collapse" href="https://discuss.geeksforgeeks.org/discuss/prob703691/String%20Subsequence%20Game%20%7C%20Practice%20%7C%20GeeksforGeeks%20/practice/?rel=https%3A%2F%2Fpractice.geeksforgeeks.org%2Fproblems%2Fstring-subsequence-game5515%2F1%3Fpage%3D5%26curated%5B%5D%3D7%26sortBy%3Dsubmissions&amp;mode=light#threads_comment_a0a2ccff88bae766ea1d31cc696c5a40" role="button" aria-expanded="false" aria-controls="replies">Show 0 Replies</a><div class="collapse" id="threads_comment_a0a2ccff88bae766ea1d31cc696c5a40"><section class="loader"><div class="alignLoader"><div class="spinner-border" role="status"></div><span class="text-secondary ml-1">Loading...</span></div></section></div></div></div></div><div><div class="row ml-0 mr-0 mt-4 mb-2 w-100"><div class="col-2  col-xs-custom-1 text-center vote-section"><button class="btn vote-button rounded-circle"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up fa-w-14 text-muted" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"></path></svg></button><p class="text-success mb-0 mt-0 sofia-pro"><small>0</small></p><button class="btn vote-button rounded-circle"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14 text-muted" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg></button><p class="nestedStructure"></p></div><div class=" col-10 col-xs-custom-11"><div style="display: none;"><section><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-v" class="svg-inline--fa fa-ellipsis-v fa-w-6 mt-3 text-muted mr-3 float-right dropdown-toggle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512" type="button" id="adminOptions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><path fill="currentColor" d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"></path></svg><div class="dropdown-menu dropdown-menu-right" aria-labelledby="adminOptions"><button class="btn btn-link dropdown-item text-secondary sofia-pro"><img alt="Icon" class="flag-icon" src="./Group5019-1629270879.svg"> Report</button></div></section></div><p class="text-dark text-dark sofia-pro headingStyle d-flex align-items-center"><a href="https://auth.geeksforgeeks.org/user/2019ceb1036/practice/" target="_blank" rel="noreferrer" class="text-secondary text-decoration-none sofia-pro   my-auto">2019ceb1036</a><span class="text-black-50 ml-2 timeStyle">6 months ago</span></p><div class="comment-body mt-2 overflow-hidden"><div class="overflow-hidden commentStyle ck-content urw-din"><p>class Solution {<br>&nbsp;public:<br>&nbsp; &nbsp;// check if a char is vowel or not<br>&nbsp; &nbsp;bool vowel(char c){<br>&nbsp; &nbsp; &nbsp; &nbsp;if(c == 'a' or c == 'e' or c == 'i' or c == 'o' or c == 'u'){<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;return true;<br>&nbsp; &nbsp; &nbsp; &nbsp;}<br>&nbsp; &nbsp; &nbsp; &nbsp;return false;<br>&nbsp; &nbsp;}<br>&nbsp; &nbsp;// finding all possible subsequences<br>&nbsp; &nbsp;void findSubSeq(int index, string &amp;S, set&lt;string&gt; &amp;mini, string &amp;output){<br>&nbsp; &nbsp; &nbsp; &nbsp;if(index == S.size()){<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if(output.length() &gt; 0){<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;mini.insert(output); &nbsp; &nbsp;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;return;<br>&nbsp; &nbsp; &nbsp; &nbsp;}<br>&nbsp; &nbsp; &nbsp; &nbsp;// include<br>&nbsp; &nbsp; &nbsp; &nbsp;output.push_back(S[index]);<br>&nbsp; &nbsp; &nbsp; &nbsp;findSubSeq(index+1, S, mini, output);<br>&nbsp; &nbsp; &nbsp; &nbsp;output.pop_back();<br>&nbsp; &nbsp; &nbsp; &nbsp;// exclude<br>&nbsp; &nbsp; &nbsp; &nbsp;findSubSeq(index+1, S, mini, output);<br>&nbsp; &nbsp; &nbsp; &nbsp;return;<br>&nbsp; &nbsp;}<br>&nbsp; &nbsp;<br>&nbsp; &nbsp;set&lt;string&gt; allPossibleSubsequences(string S) {<br>&nbsp; &nbsp; &nbsp; &nbsp;set&lt;string&gt; ans;<br>&nbsp; &nbsp; &nbsp; &nbsp;set&lt;string&gt; mini;<br>&nbsp; &nbsp; &nbsp; &nbsp;string v = "";<br>&nbsp; &nbsp; &nbsp; &nbsp;int index = 0;<br>&nbsp; &nbsp; &nbsp; &nbsp;// finding all possible subsequences<br>&nbsp; &nbsp; &nbsp; &nbsp;findSubSeq(index, S, mini, v);<br>&nbsp; &nbsp; &nbsp; &nbsp;// mini will have all possible subsequences&nbsp;<br>&nbsp; &nbsp; &nbsp; &nbsp;for(auto str : mini){<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;int i = str.size();<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// checking given condition<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if(vowel(str[0]) &amp;&amp; !vowel(str[i-1])){<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// checking that there is no duplicate&nbsp;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// imserting first time in ans<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if(ans.find(str) == ans.end()){<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ans.insert(str);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>&nbsp; &nbsp; &nbsp; &nbsp;}<br>&nbsp; &nbsp; &nbsp; &nbsp;return ans;<br>&nbsp; &nbsp;}<br>};</p></div><div><section class="mt-2"><div><span class="text-secondary pl-0 sofia-pro btn btn-light btn-sm" style="cursor: pointer;">Reply <img class="reply-button-icon" alt="Loading..." src="./Group4874-1629269363.svg"></span><a target="_blank" class="text-secondary pl-0 mb-0 pb-0 sofia-pro btn btn-light btn-sm" href="https://discuss.geeksforgeeks.org/comment/88ec672ec0030ab6412de637c1551ca0"><span class="pb-0 pr-1 sofia-pro">Open Externally</span><img class="pb-1 external-link-icon" alt="" src="./external_link-1629374313.svg"></a></div></section></div></div><a type="button" class="text-success reply-button sofia-pro d-none" data-toggle="collapse" href="https://discuss.geeksforgeeks.org/discuss/prob703691/String%20Subsequence%20Game%20%7C%20Practice%20%7C%20GeeksforGeeks%20/practice/?rel=https%3A%2F%2Fpractice.geeksforgeeks.org%2Fproblems%2Fstring-subsequence-game5515%2F1%3Fpage%3D5%26curated%5B%5D%3D7%26sortBy%3Dsubmissions&amp;mode=light#threads_comment_88ec672ec0030ab6412de637c1551ca0" role="button" aria-expanded="false" aria-controls="replies">Show 0 Replies</a><div class="collapse" id="threads_comment_88ec672ec0030ab6412de637c1551ca0"><section class="loader"><div class="alignLoader"><div class="spinner-border" role="status"></div><span class="text-secondary ml-1">Loading...</span></div></section></div></div></div></div><div><div class="row ml-0 mr-0 mt-4 mb-2 w-100"><div class="col-2  col-xs-custom-1 text-center vote-section"><button class="btn vote-button rounded-circle"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up fa-w-14 text-muted" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"></path></svg></button><p class="text-success mb-0 mt-0 sofia-pro"><small>0</small></p><button class="btn vote-button rounded-circle"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14 text-muted" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg></button><p class="nestedStructure"></p></div><div class=" col-10 col-xs-custom-11"><div style="display: none;"><section><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-v" class="svg-inline--fa fa-ellipsis-v fa-w-6 mt-3 text-muted mr-3 float-right dropdown-toggle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512" type="button" id="adminOptions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><path fill="currentColor" d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"></path></svg><div class="dropdown-menu dropdown-menu-right" aria-labelledby="adminOptions"><button class="btn btn-link dropdown-item text-secondary sofia-pro"><img alt="Icon" class="flag-icon" src="./Group5019-1629270879.svg"> Report</button></div></section></div><p class="text-dark text-dark sofia-pro headingStyle d-flex align-items-center"><a href="https://auth.geeksforgeeks.org/user/shravaniprao/practice/" target="_blank" rel="noreferrer" class="text-secondary text-decoration-none sofia-pro   my-auto">shravaniprao</a><span class="text-black-50 ml-2 timeStyle">6 months ago</span></p><div class="comment-body mt-2 overflow-hidden"><div class="overflow-hidden commentStyle ck-content urw-din"><pre><code class="language-plaintext"> void helper(string S,set&lt;string&gt;&amp; ans,string output){
+       
+       if(output.length()&gt;=2){
+           if((output[0]=='a'|| output[0]=='e' || output[0]=='i'||output[0]=='o' || output[0]=='u')   &amp;&amp;
+           (output[output.length()-1]!='a'&amp;&amp; output[output.length()-1]!='e' &amp;&amp; output[output.length()-1]!='i'&amp;&amp;output[output.length()-1]!='o' &amp;&amp; output[output.length()-1]!='u') ){
+               ans.insert(output);
+           }
+       }
+       if(S.length()==0){
+           return;
+       }
+       
+       helper(S.substr(1),ans,output+S[0]);
+       helper(S.substr(1),ans,output);
+       
+   }
+   set&lt;string&gt; allPossibleSubsequences(string S) {
+       set&lt;string&gt; ans;
+       string output="";
+      
+       helper(S,ans,output);
+       
+       return ans;
+   }</code></pre></div><div><section class="mt-2"><div><span class="text-secondary pl-0 sofia-pro btn btn-light btn-sm" style="cursor: pointer;">Reply <img class="reply-button-icon" alt="Loading..." src="./Group4874-1629269363.svg"></span><a target="_blank" class="text-secondary pl-0 mb-0 pb-0 sofia-pro btn btn-light btn-sm" href="https://discuss.geeksforgeeks.org/comment/c9553d46f9c385d411f206e95f611eb9"><span class="pb-0 pr-1 sofia-pro">Open Externally</span><img class="pb-1 external-link-icon" alt="" src="./external_link-1629374313.svg"></a></div></section></div></div><a type="button" class="text-success reply-button sofia-pro d-none" data-toggle="collapse" href="https://discuss.geeksforgeeks.org/discuss/prob703691/String%20Subsequence%20Game%20%7C%20Practice%20%7C%20GeeksforGeeks%20/practice/?rel=https%3A%2F%2Fpractice.geeksforgeeks.org%2Fproblems%2Fstring-subsequence-game5515%2F1%3Fpage%3D5%26curated%5B%5D%3D7%26sortBy%3Dsubmissions&amp;mode=light#threads_comment_c9553d46f9c385d411f206e95f611eb9" role="button" aria-expanded="false" aria-controls="replies">Show 0 Replies</a><div class="collapse" id="threads_comment_c9553d46f9c385d411f206e95f611eb9"><section class="loader"><div class="alignLoader"><div class="spinner-border" role="status"></div><span class="text-secondary ml-1">Loading...</span></div></section></div></div></div></div><div><div class="row ml-0 mr-0 mt-4 mb-2 w-100"><div class="col-2  col-xs-custom-1 text-center vote-section"><button class="btn vote-button rounded-circle"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up fa-w-14 text-muted" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"></path></svg></button><p class="text-success mb-0 mt-0 sofia-pro"><small>0</small></p><button class="btn vote-button rounded-circle"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14 text-muted" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg></button><p class="nestedStructure"></p></div><div class=" col-10 col-xs-custom-11"><div style="display: none;"><section><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-v" class="svg-inline--fa fa-ellipsis-v fa-w-6 mt-3 text-muted mr-3 float-right dropdown-toggle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512" type="button" id="adminOptions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><path fill="currentColor" d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"></path></svg><div class="dropdown-menu dropdown-menu-right" aria-labelledby="adminOptions"><button class="btn btn-link dropdown-item text-secondary sofia-pro"><img alt="Icon" class="flag-icon" src="./Group5019-1629270879.svg"> Report</button></div></section></div><p class="text-dark text-dark sofia-pro headingStyle d-flex align-items-center"><a href="https://auth.geeksforgeeks.org/user/vkd001/practice/" target="_blank" rel="noreferrer" class="text-secondary text-decoration-none sofia-pro   my-auto">vkd001</a><span class="text-black-50 ml-2 timeStyle">7 months ago</span></p><div class="comment-body mt-2 overflow-hidden"><div class="overflow-hidden commentStyle ck-content urw-din"><p>//<strong>BackTRacking and Recursion !! CLEAN CODE !</strong></p><p>&nbsp;</p><p>class Solution {<br>&nbsp; &nbsp;<br>&nbsp; &nbsp;bool isVowel(char ch){<br>&nbsp; &nbsp; &nbsp; &nbsp;return ch=='a' or ch=='e' or ch=='i' or ch=='o' or ch=='u';<br>&nbsp; &nbsp;}<br>&nbsp; &nbsp;void vkd_rec(int ind, string s,set&lt;string&gt;&amp;ans,string &amp;ds){<br>&nbsp; &nbsp; &nbsp; &nbsp;if(ind&gt;=s.size()){ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// base constion<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if(ds.size()&gt;=2){<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if(isVowel(ds[0]) &amp;&amp; !isVowel(ds[ds.size()-1]))<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ans.insert(ds);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;return;<br>&nbsp; &nbsp; &nbsp; &nbsp;}<br>&nbsp; &nbsp; &nbsp; &nbsp;<br>&nbsp; &nbsp; &nbsp; &nbsp;vkd_rec(ind+1,s,ans,ds); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // pick !!<br>&nbsp; &nbsp; &nbsp; &nbsp;<br>&nbsp; &nbsp; &nbsp; &nbsp;ds.push_back(s[ind]);<br>&nbsp; &nbsp; &nbsp; &nbsp;vkd_rec(ind+1,s,ans,ds); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Not Pick !!<br>&nbsp; &nbsp; &nbsp; &nbsp;ds.pop_back(); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Backtracking !!<br>&nbsp; &nbsp;}&nbsp;<br>&nbsp;public:<br>&nbsp; &nbsp;set&lt;string&gt; allPossibleSubsequences(string S) {<br>&nbsp; &nbsp; &nbsp; &nbsp;// code her<br>&nbsp; &nbsp; &nbsp; &nbsp;string ds = "";<br>&nbsp; &nbsp; &nbsp; &nbsp;set&lt;string&gt;ans;<br>&nbsp; &nbsp; &nbsp; &nbsp;string str="";<br>&nbsp; &nbsp; &nbsp; &nbsp;vkd_rec(0,S,ans,ds);<br>&nbsp; &nbsp;&nbsp;<br>&nbsp; &nbsp;&nbsp;<br>&nbsp; &nbsp; return ans;<br>&nbsp; &nbsp;}<br>};</p></div><div><section class="mt-2"><div><span class="text-secondary pl-0 sofia-pro btn btn-light btn-sm" style="cursor: pointer;">Reply <img class="reply-button-icon" alt="Loading..." src="./Group4874-1629269363.svg"></span><a target="_blank" class="text-secondary pl-0 mb-0 pb-0 sofia-pro btn btn-light btn-sm" href="https://discuss.geeksforgeeks.org/comment/7839dd48984c79db719ee687ce5caf73"><span class="pb-0 pr-1 sofia-pro">Open Externally</span><img class="pb-1 external-link-icon" alt="" src="./external_link-1629374313.svg"></a></div></section></div></div><a type="button" class="text-success reply-button sofia-pro d-none" data-toggle="collapse" href="https://discuss.geeksforgeeks.org/discuss/prob703691/String%20Subsequence%20Game%20%7C%20Practice%20%7C%20GeeksforGeeks%20/practice/?rel=https%3A%2F%2Fpractice.geeksforgeeks.org%2Fproblems%2Fstring-subsequence-game5515%2F1%3Fpage%3D5%26curated%5B%5D%3D7%26sortBy%3Dsubmissions&amp;mode=light#threads_comment_7839dd48984c79db719ee687ce5caf73" role="button" aria-expanded="false" aria-controls="replies">Show 0 Replies</a><div class="collapse" id="threads_comment_7839dd48984c79db719ee687ce5caf73"><section class="loader"><div class="alignLoader"><div class="spinner-border" role="status"></div><span class="text-secondary ml-1">Loading...</span></div></section></div></div></div></div><div><div class="row ml-0 mr-0 mt-4 mb-2 w-100"><div class="col-2  col-xs-custom-1 text-center vote-section"><button class="btn vote-button rounded-circle"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up fa-w-14 text-muted" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"></path></svg></button><p class="text-success mb-0 mt-0 sofia-pro"><small>0</small></p><button class="btn vote-button rounded-circle"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14 text-muted" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg></button><p class="nestedStructure"></p></div><div class=" col-10 col-xs-custom-11"><div style="display: none;"><section><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-v" class="svg-inline--fa fa-ellipsis-v fa-w-6 mt-3 text-muted mr-3 float-right dropdown-toggle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512" type="button" id="adminOptions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><path fill="currentColor" d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"></path></svg><div class="dropdown-menu dropdown-menu-right" aria-labelledby="adminOptions"><button class="btn btn-link dropdown-item text-secondary sofia-pro"><img alt="Icon" class="flag-icon" src="./Group5019-1629270879.svg"> Report</button></div></section></div><p class="text-dark text-dark sofia-pro headingStyle d-flex align-items-center"><a href="https://auth.geeksforgeeks.org/user/akkeshri14042001/practice/" target="_blank" rel="noreferrer" class="text-secondary text-decoration-none sofia-pro   my-auto">akkeshri14042001</a><span class="text-black-50 ml-2 timeStyle">7 months ago</span></p><div class="comment-body mt-2 overflow-hidden"><div class="overflow-hidden commentStyle ck-content urw-din"><pre><code class="language-plaintext">bool vowel(char ch){
+     return (ch=='a') or (ch=='i') or (ch=='e') or (ch=='o') or (ch=='u');
+ }
+ void solve(int indx,string S,string &amp;str,set&lt;string&gt;&amp;k){
+     if(indx&gt;=S.length()){
+         if(vowel(str[0]) and !vowel(str[str.length()-1])){
+             k.insert(str);
+         }
+         return ;
+     }
+     str.push_back(S[indx]);
+     solve(indx+1,S,str,k);
+     str.pop_back();
+     solve(indx+1,S,str,k);
+ }
+   set&lt;string&gt; allPossibleSubsequences(string S) {
+       // code here
+       set&lt;string&gt;k;
+       string str="";
+       solve(0,S,str,k);
+       return k;
+   }</code></pre></div><div><section class="mt-2"><div><span class="text-secondary pl-0 sofia-pro btn btn-light btn-sm" style="cursor: pointer;">Reply <img class="reply-button-icon" alt="Loading..." src="./Group4874-1629269363.svg"></span><a target="_blank" class="text-secondary pl-0 mb-0 pb-0 sofia-pro btn btn-light btn-sm" href="https://discuss.geeksforgeeks.org/comment/e369080e6f38116e1cab78f00c8a34e6"><span class="pb-0 pr-1 sofia-pro">Open Externally</span><img class="pb-1 external-link-icon" alt="" src="./external_link-1629374313.svg"></a></div></section></div></div><a type="button" class="text-success reply-button sofia-pro d-none" data-toggle="collapse" href="https://discuss.geeksforgeeks.org/discuss/prob703691/String%20Subsequence%20Game%20%7C%20Practice%20%7C%20GeeksforGeeks%20/practice/?rel=https%3A%2F%2Fpractice.geeksforgeeks.org%2Fproblems%2Fstring-subsequence-game5515%2F1%3Fpage%3D5%26curated%5B%5D%3D7%26sortBy%3Dsubmissions&amp;mode=light#threads_comment_e369080e6f38116e1cab78f00c8a34e6" role="button" aria-expanded="false" aria-controls="replies">Show 0 Replies</a><div class="collapse" id="threads_comment_e369080e6f38116e1cab78f00c8a34e6"><section class="loader"><div class="alignLoader"><div class="spinner-border" role="status"></div><span class="text-secondary ml-1">Loading...</span></div></section></div></div></div></div><div><div class="row ml-0 mr-0 mt-4 mb-2 w-100"><div class="col-2  col-xs-custom-1 text-center vote-section"><button class="btn vote-button rounded-circle"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up fa-w-14 text-muted" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"></path></svg></button><p class="text-success mb-0 mt-0 sofia-pro"><small>0</small></p><button class="btn vote-button rounded-circle"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14 text-muted" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg></button><p class="nestedStructure"></p></div><div class=" col-10 col-xs-custom-11"><div style="display: none;"><section><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ellipsis-v" class="svg-inline--fa fa-ellipsis-v fa-w-6 mt-3 text-muted mr-3 float-right dropdown-toggle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512" type="button" id="adminOptions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><path fill="currentColor" d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"></path></svg><div class="dropdown-menu dropdown-menu-right" aria-labelledby="adminOptions"><button class="btn btn-link dropdown-item text-secondary sofia-pro"><img alt="Icon" class="flag-icon" src="./Group5019-1629270879.svg"> Report</button></div></section></div><p class="text-dark text-dark sofia-pro headingStyle d-flex align-items-center"><a href="https://auth.geeksforgeeks.org/user/amankumarsingh1331/practice/" target="_blank" rel="noreferrer" class="text-secondary text-decoration-none sofia-pro   my-auto">amankumarsingh1331</a><span class="text-black-50 ml-2 timeStyle">8 months ago</span></p><div class="comment-body mt-2 overflow-hidden"><div class="overflow-hidden commentStyle ck-content urw-din"><p>class Solution {<br>&nbsp;<br>&nbsp; &nbsp; bool isvowel(char t)<br>&nbsp; &nbsp;{<br>&nbsp; &nbsp; &nbsp; return t=='a' ||t=='e' ||t=='u'|| t=='i'||t=='o' ; &nbsp;<br>&nbsp;&nbsp;<br>&nbsp; &nbsp;}<br>&nbsp; &nbsp; &nbsp;void solve(string S,string k,int index,set&lt;string&gt; &amp;s1)<br>&nbsp; &nbsp;{<br>&nbsp; &nbsp; &nbsp; &nbsp;<br>&nbsp; &nbsp; &nbsp; &nbsp;if(index&gt;=S.size())<br>&nbsp; &nbsp; &nbsp; &nbsp;{<br>&nbsp; &nbsp; &nbsp; &nbsp;if(isvowel(k[0]) &amp;&amp; !isvowel(k[k.size()-1]))<br>&nbsp; &nbsp; &nbsp; &nbsp; { &nbsp; &nbsp;s1.insert(k);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br>&nbsp; &nbsp; &nbsp; &nbsp;return ;<br>&nbsp; &nbsp; &nbsp; &nbsp;}<br>&nbsp; &nbsp; &nbsp; &nbsp;solve(S,k+S[index],index+1,s1);<br>&nbsp; &nbsp; &nbsp; &nbsp;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;char element =S[index];<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;k.push_back(k[index]);<br>&nbsp; &nbsp; &nbsp; &nbsp; solve(S,k,index+1,s1);<br>&nbsp; &nbsp; &nbsp; &nbsp;<br>&nbsp; &nbsp; &nbsp; &nbsp;<br>&nbsp; &nbsp;}<br>&nbsp;public:<br>&nbsp; &nbsp;set&lt;string&gt; allPossibleSubsequences(string S) {<br>&nbsp; &nbsp; &nbsp; &nbsp;set&lt;string&gt; s1;<br>&nbsp; &nbsp; &nbsp; &nbsp;string k=" ";<br>&nbsp; &nbsp; &nbsp; &nbsp;int index=0;<br>&nbsp; &nbsp; &nbsp; &nbsp;solve(S,k,index,s1);<br>&nbsp; &nbsp; &nbsp; &nbsp;return s1;<br>&nbsp; &nbsp;}<br>};</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>hey freinds can anyone fix it why it is returning -1 ???</p></div><div><section class="mt-2"><div><span class="text-secondary pl-0 sofia-pro btn btn-light btn-sm" style="cursor: pointer;">Reply <img class="reply-button-icon" alt="Loading..." src="./Group4874-1629269363.svg"></span><a target="_blank" class="text-secondary pl-0 mb-0 pb-0 sofia-pro btn btn-light btn-sm" href="https://discuss.geeksforgeeks.org/comment/2ccb63d31e96e58216488ce93093f305"><span class="pb-0 pr-1 sofia-pro">Open Externally</span><img class="pb-1 external-link-icon" alt="" src="./external_link-1629374313.svg"></a></div></section></div></div><a type="button" class="text-success reply-button sofia-pro" data-toggle="collapse" href="https://discuss.geeksforgeeks.org/discuss/prob703691/String%20Subsequence%20Game%20%7C%20Practice%20%7C%20GeeksforGeeks%20/practice/?rel=https%3A%2F%2Fpractice.geeksforgeeks.org%2Fproblems%2Fstring-subsequence-game5515%2F1%3Fpage%3D5%26curated%5B%5D%3D7%26sortBy%3Dsubmissions&amp;mode=light#threads_comment_2ccb63d31e96e58216488ce93093f305" role="button" aria-expanded="false" aria-controls="replies">Show 1 Replies</a><div class="collapse" id="threads_comment_2ccb63d31e96e58216488ce93093f305"><section class="loader"><div class="alignLoader"><div class="spinner-border" role="status"></div><span class="text-secondary ml-1">Loading...</span></div></section></div></div></div></div><div class="d-flex justify-content-center mb-3 mt-2"><button class="btn btn-light sofia-pro font-weight-bold">Load More Comments</button></div></div><button id="back-to-top" class="btn back-to-top d-none"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" class="svg-inline--fa fa-chevron-up fa-w-14 text-white" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"></path></svg></button></section></section></div></div><script>!function(e){function t(t){for(var n,o,c=t[0],i=t[1],f=t[2],l=0,p=[];l<c.length;l++)o=c[l],Object.prototype.hasOwnProperty.call(a,o)&&a[o]&&p.push(a[o][0]),a[o]=0;for(n in i)Object.prototype.hasOwnProperty.call(i,n)&&(e[n]=i[n]);for(s&&s(t);p.length;)p.shift()();return u.push.apply(u,f||[]),r()}function r(){for(var e,t=0;t<u.length;t++){for(var r=u[t],n=!0,o=1;o<r.length;o++){var i=r[o];0!==a[i]&&(n=!1)}n&&(u.splice(t--,1),e=c(c.s=r[0]))}return e}var n={},o={4:0},a={4:0},u=[];function c(t){if(n[t])return n[t].exports;var r=n[t]={i:t,l:!1,exports:{}};return e[t].call(r.exports,r,r.exports,c),r.l=!0,r.exports}c.e=function(e){var t=[];o[e]?t.push(o[e]):0!==o[e]&&{0:1,1:1,6:1,7:1,8:1}[e]&&t.push(o[e]=new Promise((function(t,r){for(var n="static/css/"+({}[e]||e)+"."+{0:"f4c56af9",1:"bf61578f",2:"31d6cfe0",6:"b1d4181e",7:"23906677",8:"9b15ba54",9:"31d6cfe0",10:"31d6cfe0"}[e]+".chunk.css",a=c.p+n,u=document.getElementsByTagName("link"),i=0;i<u.length;i++){var f=(s=u[i]).getAttribute("data-href")||s.getAttribute("href");if("stylesheet"===s.rel&&(f===n||f===a))return t()}var l=document.getElementsByTagName("style");for(i=0;i<l.length;i++){var s;if((f=(s=l[i]).getAttribute("data-href"))===n||f===a)return t()}var p=document.createElement("link");p.rel="stylesheet",p.type="text/css",p.onload=t,p.onerror=function(t){var n=t&&t.target&&t.target.src||a,u=new Error("Loading CSS chunk "+e+" failed.\n("+n+")");u.code="CSS_CHUNK_LOAD_FAILED",u.request=n,delete o[e],p.parentNode.removeChild(p),r(u)},p.href=a,document.getElementsByTagName("head")[0].appendChild(p)})).then((function(){o[e]=0})));var r=a[e];if(0!==r)if(r)t.push(r[2]);else{var n=new Promise((function(t,n){r=a[e]=[t,n]}));t.push(r[2]=n);var u,i=document.createElement("script");i.charset="utf-8",i.timeout=120,c.nc&&i.setAttribute("nonce",c.nc),i.src=function(e){return c.p+"static/js/"+({}[e]||e)+"."+{0:"911b0286",1:"52154e6e",2:"b54af5a7",6:"753b22bf",7:"1766ba51",8:"1c2c3879",9:"1e9abe1f",10:"f620fc1f"}[e]+".chunk.js"}(e);var f=new Error;u=function(t){i.onerror=i.onload=null,clearTimeout(l);var r=a[e];if(0!==r){if(r){var n=t&&("load"===t.type?"missing":t.type),o=t&&t.target&&t.target.src;f.message="Loading chunk "+e+" failed.\n("+n+": "+o+")",f.name="ChunkLoadError",f.type=n,f.request=o,r[1](f)}a[e]=void 0}};var l=setTimeout((function(){u({type:"timeout",target:i})}),12e4);i.onerror=i.onload=u,document.head.appendChild(i)}return Promise.all(t)},c.m=e,c.c=n,c.d=function(e,t,r){c.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},c.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},c.t=function(e,t){if(1&t&&(e=c(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(c.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var n in e)c.d(r,n,function(t){return e[t]}.bind(null,n));return r},c.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return c.d(t,"a",t),t},c.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},c.p="/",c.oe=function(e){throw console.error(e),e};var i=this.webpackJsonpcomments=this.webpackJsonpcomments||[],f=i.push.bind(i);i.push=t,i=i.slice();for(var l=0;l<i.length;l++)t(i[l]);var s=f;r()}([])</script><script src="./5.98a64ad7.chunk.js.download"></script><script src="./main.4c8a8f1a.chunk.js.download"></script><div style="clear: both; display: block; height: 0px;"></div><div class="tox tox-silver-sink tox-tinymce-aux" style="position: relative;"></div></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

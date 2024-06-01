@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "vector": "cpp",
+        "ostream": "cpp",
+        "iostream": "cpp",
+        "random": "cpp",
+        "stdio.h": "c"
+    },
+    "cmake.sourceDirectory": "D:/PROGRAMING/Date Wise 2023/23-9-10/new_proj/linux"
+}

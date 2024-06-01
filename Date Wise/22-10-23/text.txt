@@ -1,0 +1,6 @@
+what to do now i have already created an file otherwise i have used you....
+
+There are three wayes of creating pair...
+pair<int,int>*(can add name)(data,data)
+{data,data}
+make_pair<data,data>
