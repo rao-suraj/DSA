@@ -16,6 +16,7 @@ int main() {
     //     cout<<*s;
     //     s++;
     // }
+    // cout<<*s;
 
     // str1.replace(0,3,str2);
 
@@ -23,6 +24,6 @@ int main() {
 
     // str1.erase(0,2);
 
-    cout<<str1;
+    // cout<<str1;
     return 0;
 }
