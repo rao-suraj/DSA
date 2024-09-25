@@ -55,3 +55,46 @@ void findcomb(vector<vector<int>>& ans,vector<int>& ds,vector<int>& arr,int targ
 Time complixity = 2^t * K  t=target. k=average size of the combination.
 
 */
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int x = 2, n = 2;
+    double ans = 1; // To store the result
+    long nn = n;    // Use long to avoid overflow with large negative n
+
+    // If n is negative, convert it to positive for easier calculation
+    if (nn < 0)
+    {
+        nn = -nn;
+    }
+
+    // Loop until nn becomes 0
+    while (nn > 0)
+    {
+        cout<<nn<<"  "<<x<<endl;
+        // If nn is odd, multiply the result with current x
+        if (nn % 2 == 1)
+        {
+            cout<<"FIRST"<<endl;
+            ans *= x;
+            nn--; // Reduce nn by 1 if it's odd
+        }
+        else
+        {
+            cout<<"SECOND"<<endl;
+            x *= x;  // Square the base
+            nn /= 2; // Divide nn by 2
+        }
+    }
+
+    // If n is negative, return the reciprocal of the result
+    if (n < 0)
+    {
+        ans = 1 / ans;
+    }
+    return 0;
+}
