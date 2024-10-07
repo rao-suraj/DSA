@@ -1,0 +1,135 @@
+To help you estimate operations like logarithms and improve your math skills, let's start with a few useful tricks and rules for calculating logarithms approximately.
+
+### **1. Understanding Logarithms**:
+The logarithm \( \log_b(n) \) tells you **how many times you must multiply the base \( b \)** to get \( n \).
+
+For example:
+- \( \log_{10}(1000) = 3 \) because \( 10^3 = 1000 \).
+- \( \log_2(16) = 4 \) because \( 2^4 = 16 \).
+
+### **2. Basic Logarithmic Properties**:
+These are important properties that help simplify logarithmic calculations:
+- \( \log_b(x \cdot y) = \log_b(x) + \log_b(y) \)
+- \( \log_b(x / y) = \log_b(x) - \log_b(y) \)
+- \( \log_b(x^k) = k \cdot \log_b(x) \)
+- \( \log_b(b) = 1 \) (because \( b^1 = b \))
+- \( \log_b(1) = 0 \) (because \( b^0 = 1 \))
+
+### **3. Approximating Logarithms**:
+- **Logarithms of Powers of 10**: For \( \log_{10}(n) \), powers of 10 are easy to estimate. If \( n = 10^k \), then \( \log_{10}(n) = k \). For example:
+  - \( \log_{10}(10^6) = 6 \)
+  - \( \log_{10}(10^{12}) = 12 \)
+  - \( \log_{10}(10^{16}) = 16 \)
+
+So, **\( \log_{10}(10^{16}) = 16 \)** exactly. This rule is great when dealing with large numbers expressed as powers of 10.
+
+- **Logarithms of Numbers Near Powers of 10**: If \( n \) is not a perfect power of 10 but close, you can still approximate. For example:
+  - \( \log_{10}(500) \): Since \( 500 \) is between \( 10^2 \) (which is 100) and \( 10^3 \) (which is 1000), \( \log_{10}(500) \) is approximately **2.7** (since 500 is closer to 1000).
+  
+- **Natural Logarithms (\( \ln(n) \))**: For natural logarithms, \( \ln(n) = \log_e(n) \), where \( e \approx 2.718 \). You can use \( \ln(n) \approx 2.3 \cdot \log_{10}(n) \) as an approximation. So for \( n = 10^k \), \( \ln(10^k) \approx 2.3k \).
+
+### **4. Trick to Calculate \( \log_2(n) \)**:
+To approximate \( \log_2(n) \) for large values of \( n \), you can convert base-10 logarithms to base-2 using the formula:
+
+\[
+\log_2(n) \approx \frac{\log_{10}(n)}{\log_{10}(2)}
+\]
+
+Since \( \log_{10}(2) \approx 0.301 \), you can estimate \( \log_2(n) \) by multiplying the base-10 logarithm by \( \approx 3.32 \).
+
+#### Example:
+To find \( \log_2(10^{16}) \):
+\[
+\log_2(10^{16}) = 3.32 \times \log_{10}(10^{16}) = 3.32 \times 16 = 53.12
+\]
+So, \( \log_2(10^{16}) \approx 53 \).
+
+### **5. Common Logarithmic Values to Know**:
+- \( \log_{10}(2) \approx 0.301 \)
+- \( \log_{10}(5) \approx 0.699 \)
+- \( \log_2(10) \approx 3.32 \)
+- \( \ln(10) \approx 2.3 \)
+
+### **6. Quick Estimation Tips**:
+- **Logarithms of small numbers** like 2, 3, 5, and 10 are helpful to know.
+- **Use rough ranges** to estimate logs for numbers that are not exact powers of 10 (e.g., \( \log_{10}(600) \) is a bit less than 3).
+- **Simplify large numbers** by breaking them into smaller factors you know, like \( \log_{10}(400) = \log_{10}(4) + \log_{10}(100) \).
+
+### Summary:
+- For powers of 10, \( \log_{10}(10^k) = k \).
+- For \( \log_2(n) \), use \( \log_2(n) \approx 3.32 \times \log_{10}(n) \).
+- Use known values of logarithms and their properties to approximate operations quickly.
+
+With practice, these rules and tricks will help you estimate operations efficiently when calculating time complexity or dealing with large input sizes!
+
+
+
+
+### Estimating Operations for \( n^2 \) and \( n \log n \)
+
+Let's break down how to estimate the number of operations for algorithms with **\( O(n^2) \)** (quadratic) and **\( O(n \log n) \)** (linearithmic) time complexities.
+
+---
+
+### 1. **Quadratic Time: \( O(n^2) \)**
+
+In **quadratic time**, the number of operations grows as the square of the input size \( n \). If \( n \) doubles, the number of operations increases by **four times**.
+
+#### How to estimate operations:
+- If the input size \( n \) is given, just square it to get an approximation of the number of operations.
+
+#### Example Calculations:
+- For \( n = 10^3 \), the number of operations is:
+  \[
+  n^2 = (10^3)^2 = 10^6 \quad \text{(1 million operations)}
+  \]
+- For \( n = 10^4 \), the number of operations is:
+  \[
+  n^2 = (10^4)^2 = 10^8 \quad \text{(100 million operations)}
+  \]
+
+- For \( n = 10^6 \), the number of operations would be:
+  \[
+  n^2 = (10^6)^2 = 10^{12} \quad \text{(1 trillion operations)}
+  \]
+
+Clearly, \( O(n^2) \) algorithms become **very inefficient** for large \( n \). Even if a server can perform \( 10^8 \) operations per second, an input size of \( n = 10^6 \) would take much longer than 1 second.
+
+#### Approximation Tip:
+When dealing with \( O(n^2) \), the input size should generally stay below **\( 10^4 \)** for a 1-second execution limit.
+
+---
+
+### 2. **Linearithmic Time: \( O(n \log n) \)**
+
+In **linearithmic time**, the number of operations grows faster than \( O(n) \), but slower than \( O(n^2) \). It’s a very common time complexity for efficient sorting algorithms like **merge sort** or **quicksort**.
+
+#### How to estimate operations:
+- Multiply \( n \) by \( \log n \). Use the approximation techniques for \( \log n \) as described earlier.
+
+#### Example Calculations:
+Let’s estimate the number of operations for different values of \( n \), assuming base-2 logarithms:
+
+- For \( n = 10^3 \):
+  \[
+  n \log n = 10^3 \times \log_2(10^3) \approx 10^3 \times 10 = 10^4 \quad \text{(10,000 operations)}
+  \]
+- For \( n = 10^6 \):
+  \[
+  n \log n = 10^6 \times \log_2(10^6) \approx 10^6 \times 20 = 2 \times 10^7 \quad \text{(20 million operations)}
+  \]
+- For \( n = 10^9 \):
+  \[
+  n \log n = 10^9 \times \log_2(10^9) \approx 10^9 \times 30 = 3 \times 10^{10} \quad \text{(30 billion operations)}
+  \]
+
+#### Approximation Tip:
+- \( O(n \log n) \) algorithms are generally **efficient** for large input sizes (e.g., \( n = 10^6 \)).
+- **For \( n = 10^6 \)**, around **20 million operations** is reasonable, so this algorithm can usually run within a 1-second time limit.
+
+### Summary Comparison:
+
+- **\( O(n^2) \)** grows very quickly and can handle input sizes up to around \( 10^4 \) in 1 second.
+- **\( O(n \log n) \)** grows more slowly and can handle much larger inputs, typically up to \( 10^6 \) or even \( 10^8 \) within 1 second.
+
+For large input sizes, \( O(n \log n) \) is almost always preferable over \( O(n^2) \).

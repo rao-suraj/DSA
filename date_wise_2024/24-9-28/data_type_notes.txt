@@ -1,0 +1,31 @@
+For a 32-bit float:
+Positive Range: Approximately 1.2E-38 to 3.4E+38.
+Negative Range: Approximately -3.4E+38 to -1.2E-38.
+Precision: About 7 decimal digits of precision.
+
+Detailed Structure of float
+A float is stored using 32 bits, and those bits are divided into three parts based on the IEEE 754 standard:
+
+Sign bit: 1 bit (determines whether the number is positive or negative).
+Exponent: 8 bits (used to represent the scale of the number, i.e., powers of 2).
+Mantissa (fraction): 23 bits (used to represent the significant digits).
+
+WE DONT HAVE UNSIGNED FLOAT AND ALSO DOUBLE.
+
+double 
+
+3. Range of a double
+The range of a signed double can be broken down into positive and negative numbers, as follows:
+
+For a 64-bit double:
+Positive Range:
+
+Smallest positive double: approximately 5.0 × 10^(-324).
+Largest positive double: approximately 1.7 × 10^(308).
+Negative Range:
+
+Smallest negative double: approximately -5.0 × 10^(-324).
+Largest negative double: approximately -1.7 × 10^(308).
+Precision: Around 15-16 decimal digits, meaning it can accurately store numbers with that many significant digits before rounding errors occur.
+
+Uses IEEE format.
