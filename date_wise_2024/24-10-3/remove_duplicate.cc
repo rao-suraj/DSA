@@ -10,7 +10,7 @@ void swap(int arr[],int i,int j) {
 
 int removeDuplicate(int arr[],int size) {
     int i=0,j=1;
-    while(j<size){
+    while(j<size) {
         if(arr[i] != arr[j]) {
             i++;
             swap(arr,i,j);
